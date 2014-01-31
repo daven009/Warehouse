@@ -1,0 +1,3 @@
+<?php foreach ($deals as $deal):?>
+<?php echo '"' . $this->Number->currency($deal['Deal']['amount'],'USD'). '" , '; ?><?php echo $deal['Contact']['full_name']; ?><?php echo ' , "' .$deal['DealStatus']['name'] . '" , '; ?><?php if(isset($deal['children']['User']['full_name'])) echo $deal['children']['User']['full_name']; ?><?php echo ' , "' . $deal['Deal']['date'] . "\"\r\n"; ?>
+<?php endforeach; ?>

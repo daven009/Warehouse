@@ -1,0 +1,72 @@
+2014-01-31 16:51:02 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/files/option/logo/l_
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-31 16:51:02 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/assets/ico/favicon.png
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-31 16:51:21 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/files/option/logo/l_
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-31 16:51:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-31 16:51:28 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/files/option/logo/l_
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-31 16:51:29 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/files/option/logo/l_
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-31 16:51:30 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/files/option/logo/l_
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-01-31 16:51:31 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /Warehouse/files/option/logo/l_
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
