@@ -1,6 +1,9 @@
 # User specific & automatically generated files #
 #################################################
-/app/tmp/*
+
+app/tmp/*
+app/webroot/files/*
+
 
 # OS generated files #
 ######################
