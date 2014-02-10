@@ -1,10 +1,10 @@
 <div>
 	<div>
-		<h3><?php echo __('Contacts'); ?>
-		<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'contacts','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New')?></a>
-		<a class="btn btn-info btn-mini btn-left-margin" href="<?php echo $this->Html->url(array_merge(array('controller'=>'contacts','action'=>'index'),$this->params['named'],array(''))).'/contacts-'.date('m-d-Y-His-A').'.csv'; ?>"><i class="icon-file-text"></i> <?php echo __('Download Excel/CSV')?></a>
-		<a class="btn btn-info btn-mini btn-left-margin" href="<?php echo $this->Html->url(array('controller'=>'contacts','action'=>'import')); ?>"><i class="icon-file-text"></i> <?php echo __('CSV Import');?></a>
-		<?php echo $this->Form->create('Contact', array('url' => array_merge(array('action' => 'index'), $this->params['pass']),'class'=>'navbar-search pull-right')); ?>
+		<h3><?php echo __('Company'); ?>
+		<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'company','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New')?></a>
+		<a class="btn btn-info btn-mini btn-left-margin" href="<?php echo $this->Html->url(array_merge(array('controller'=>'company','action'=>'index'),$this->params['named'],array(''))).'/company-'.date('m-d-Y-His-A').'.csv'; ?>"><i class="icon-file-text"></i> <?php echo __('Download Excel/CSV')?></a>
+		<a class="btn btn-info btn-mini btn-left-margin" href="<?php echo $this->Html->url(array('controller'=>'company','action'=>'import')); ?>"><i class="icon-file-text"></i> <?php echo __('CSV Import');?></a>
+		<?php echo $this->Form->create('Company', array('class'=>'navbar-search pull-right')); ?>
 	  		<div class="input-append">
 	  		<?php echo $this->Form->input('search_all',array('div'=>false,'class'=>'span2','placeholder'=>'Search','label'=>false)); ?>
 	  		<button type="submit" class="btn btn-success"><i class="icon-search"></i></button>
@@ -31,7 +31,7 @@
 		</div>
 		<?php endif; ?>
 		<div class="filter-box" style="display:none">
-			<?php echo $this->Form->create('Contact', array('url' => array_merge(array('action' => 'index'), $this->params['pass']),'class'=>'form-inline')); ?>
+			<?php echo $this->Form->create('Company', array('class'=>'form-inline')); ?>
 			<fieldset>
 			<legend>__(Filters)</legend>
 				
@@ -57,55 +57,43 @@
 		<thead>
 		<?php
 			echo $this->Html->tableHeaders(array(
-					array(__('First Name')=>array('class'=>'info')),
-					array(__('Last Name')=>array('class'=>'info')),
-					array(__('Status')=>array('class'=>'warning')),
-					array(__('Company')=>array('class'=>'warning')),
-					array(__('City')=>array('class'=>'warning')),
-					array('<i class="icon-mobile-phone"></i> '.__('Phone #')=>array('class'=>'warning')),
-					array('<i class="icon-envelope"></i> '.__('E-mail')=>array('class'=>'warning')),
+					array(__('Name')=>array('class'=>'info')),
+					array(__('Type')=>array('class'=>'info')),
+					array(__('Address')=>array('class'=>'warning')),
+					array(__('Postal Code')=>array('class'=>'warning')),
+// 					array('<i class="icon-mobile-phone"></i> '.__('Phone #')=>array('class'=>'warning')),
+// 					array('<i class="icon-envelope"></i> '.__('E-mail')=>array('class'=>'warning')),
 					array(__('Action')=>array('class'=>'warning'))));
 		?>
 		</thead>
 		<tbody>
-		<?php if(empty($contacts)): ?>
+		<?php if(empty($companies)): ?>
 		<tr>
 			<td colspan="8" class="striped-info"><?php echo __('No record found.'); ?></td>
 		</tr>
 		<?php endif; ?>
-		<?php foreach ($contacts as $contact):?>
+		<?php foreach ($companies as $company):?>
 		<tr>
-			<td class="striped-info"><a href="<?php echo $this->Html->url(array('controller' => 'contacts', 'action' => 'view', $contact['Contact']['id'])); ?>">
-			<?php
-			if($contact['Contact']['photo']){
-				echo $this->Html->image('../files/contact/photo/'.$contact['Contact']['photo_dir'].'/thumb_'.$contact['Contact']['photo'],array('class'=>'','width'=>'20px','height'=>'30px'));
-			}
-			else {
-				echo $this->Html->image('no-picture.png',array('class'=>'','width'=>'20px','height'=>'30px'));
-			}
-			 ?>&nbsp;<?php echo $contact['Contact']['first_name']; ?></a></td>
-			<td class="striped-info"><a href="<?php echo $this->Html->url(array('controller' => 'contacts', 'action' => 'view', $contact['Contact']['id'])); ?>"><?php echo $contact['Contact']['last_name']; ?></a></td>
+			<td><?php echo $company['Company']['name']; ?></td>
 			<td>
 			<?php
-				if ($contact['ContactStatus']['name']=='Dealer'){
+				if ($company['CompanyGroup']['name']=='Dealer'){
 					
-					echo '<span class="label label-important">' . $contact['ContactStatus']['name'] . '</span>';
+					echo '<span class="label label-important">' . $company['CompanyGroup']['name'] . '</span>';
 				}
-				else if($contact['ContactStatus']['name']=='Distributor'){
-					echo '<span class="label label-warning">' . $contact['ContactStatus']['name'] . '</span>';
+				else if($company['CompanyGroup']['name']=='Distributor'){
+					echo '<span class="label label-warning">' . $company['CompanyGroup']['name'] . '</span>';
 					
 				}
-				else if($contact['ContactStatus']['name']=='Supplier'){
-					echo '<span class="label label-success">' . $contact['ContactStatus']['name'] . '</span>';
+				else if($company['CompanyGroup']['name']=='Supplier'){
+					echo '<span class="label label-success">' . $company['CompanyGroup']['name'] . '</span>';
 				}
 			?>
 			</td>
-			<td><?php echo $contact['Contact']['company']; ?></td>
-			<td><?php echo $contact['Contact']['city']; ?></td>
-			<td><?php echo $contact['Contact']['phone']; ?></td>
-			<td><?php echo $contact['Contact']['email']; ?></td>
+			<td><?php echo $company['Company']['address']; ?></td>
+			<td><?php echo $company['Company']['postal_code']; ?></td>
 			<td>
-				<a href="<?php echo $this->Html->url(array('controller' => 'contacts', 'action' => 'edit', $contact['Contact']['id'])); ?>"><i class="icon-edit"></i></a>
+				<a href="<?php echo $this->Html->url(array('controller' => 'company', 'action' => 'edit', $company['Company']['id'])); ?>"><i class="icon-edit"></i></a>
 			</td>
 		</tr>
 		<?php endforeach;?>
@@ -126,7 +114,7 @@ jQuery(function($) {
 	});
 	$(".date").datepicker();
 	$('#filter-result-close').click(function(){
-		window.location.href = "<?php echo $this->Html->url(array('controller'=>'contacts','action'=>'index')); ?>";
+		window.location.href = "<?php echo $this->Html->url(array('controller'=>'company','action'=>'index')); ?>";
 	});
 });
 </script>

@@ -86,10 +86,10 @@
 				<?php if($title) echo $title; else echo 'Zhen CRM'; ?></a></div>
 				<ul class="nav">
 	    		  		<li class="<?php if($this->params['controller']=='dashboards') echo 'active'; ?>"><a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'dashboards','action'=>'index')); ?>"><span><i class="icon-dashboard"></i></span><?php echo __('DASHBOARD'); ?></a></li>
-		          		<li class="dropdown <?php if($this->params['controller']=='contacts') echo 'active'; ?>">
-		          		<a class="dropdown-toggle" data-toggle="dropdown" data-target="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'contacts','action'=>'index')); ?>" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'contacts','action'=>'index')); ?>"><span><i class="icon-list"></i></span><?php echo __('CONTACTS'); ?></a>
+		          		<li class="dropdown <?php if($this->params['controller']=='stock') echo 'active'; ?>">
+		          		<a class="dropdown-toggle" data-toggle="dropdown" data-target="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'stock','action'=>'index')); ?>" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'stock','action'=>'index')); ?>"><span><i class="icon-list"></i></span><?php echo __('Inventory'); ?></a>
 		          			<ul class="dropdown-menu">
-		          				<li><a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'contacts','action'=>'add'));?>" ><i class="icon-plus"></i> <?php echo __('New Contact')?></a></li>
+		          				<li><a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'stock','action'=>'add'));?>" ><i class="icon-plus"></i> <?php echo __('Stock In'); ?></a></li>
 		          			</ul>
 		          		</li>
 		          		<li class="dropdown <?php if($this->params['controller']=='deals') echo 'active'; ?>">
@@ -111,7 +111,7 @@
 			    <ul class="nav pull-right">
         			<?php if($this->Session->read('Auth.User')): ?>
 		        	<li class="<?php if(($this->params['controller']=='users') and ($this->params['action']=='edit')) echo 'active'; ?>"><a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'users','action'=>'edit',AuthComponent::user('id'))); ?>"><span><i class="icon-user"></i></span>Hi, <?php echo AuthComponent::user('full_name'); ?></a></li>
-		        	<?php  if (AuthComponent::user('group_id')==1): ?>
+		        	<?php  if (AuthComponent::user('group_id')==1 || AuthComponent::user('group_id')==9999): ?>
 		        	<li class="dropdown <?php if(($this->params['controller']=='users') and ($this->params['action']=='index')) echo 'active'; ?>">
 		        		<a class="dropdown-toggle"
 					       data-toggle="dropdown"
@@ -122,6 +122,19 @@
 						<ul class="dropdown-menu" >
 						      <li><?php echo $this->Html->link(__('Users'),array('plugin'=>'','controller'=>'users','action'=>'index')); ?></li>
 						      <li><?php echo $this->Html->link(__('Settings'),array('plugin'=>'','controller'=>'options','action'=>'edit')); ?></li>
+						</ul>
+		        	</li>
+		        	<?php endif; ?>
+		        	<?php  if (AuthComponent::user('group_id')==9999): ?>
+		        	<li class="dropdown <?php if(($this->params['controller']=='company') and ($this->params['action']=='index')) echo 'active'; ?>">
+		        		<a class="dropdown-toggle"
+					       data-toggle="dropdown"
+					       href="/company"><span><i class="icon-briefcase"></i></span>
+					        <?php echo __('Company')?>
+					        <i class="icon-angle-down"></i>
+					    </a>
+						<ul class="dropdown-menu" >
+						      <li><?php echo $this->Html->link(__('Add'),array('plugin'=>'','controller'=>'company','action'=>'add')); ?></li>
 						</ul>
 		        	</li>
 		        	<?php endif; ?>

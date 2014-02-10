@@ -70,3 +70,1111 @@ Request URL: /Warehouse/files/option/logo/l_
 Stack Trace:
 #0 /Applications/XAMPP/xamppfiles/htdocs/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-02-01 09:20:45 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/ConnectionManager.php(94): ConnectionManager::_getConnectionObject('default')
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3195): ConnectionManager::getDataSource('default')
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3217): Model->setSource('options')
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(2674): Model->getDataSource()
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/AppController.php(89): Model->find('first', Array)
+#6 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#7 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(669): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-01 09:20:47 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/ConnectionManager.php(94): ConnectionManager::_getConnectionObject('default')
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3195): ConnectionManager::getDataSource('default')
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3217): Model->setSource('options')
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(2674): Model->getDataSource()
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/AppController.php(89): Model->find('first', Array)
+#6 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#7 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(669): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-01 09:20:48 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:23:21 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(261): Mysql->connect()
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3195): ConnectionManager::getDataSource('default')
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3217): Model->setSource('options')
+#5 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(2674): Model->getDataSource()
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/AppController.php(89): Model->find('first', Array)
+#7 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(669): CakeEventManager->dispatch(Object(CakeEvent))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#11 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-02-01 09:23:21 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:23:22 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:23:54 Error: [MissingTableException] Table options for model Option was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'options',
+  'class' => 'Option',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3217): Model->setSource('options')
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(2674): Model->getDataSource()
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/AppController.php(89): Model->find('first', Array)
+#3 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(669): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2014-02-01 09:23:54 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:24:34 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:24:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:24:55 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:08 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:20 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:41 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:47 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:47 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => 'FullCalendar',
+)
+Request URL: /full_calendar/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:52 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:55 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:25:58 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:26:01 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:26:08 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:26:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:28:57 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:28:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:29:01 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:29:07 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:29:16 Error: [MissingControllerException] Controller class FilesController could not be found.
+Exception Attributes: array (
+  'class' => 'FilesController',
+  'plugin' => NULL,
+)
+Request URL: /files/option/logo/l_
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:29:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 09:29:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 12:49:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-01 12:55:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 04:13:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 04:14:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 12:01:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 12:13:59 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 12:51:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 15:44:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 17:03:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 18:04:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 18:05:04 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => 'FullCalendar',
+)
+Request URL: /full_calendar/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 18:05:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-02 18:06:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-07 07:51:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:14:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:16:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:16:26 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:16:28 Error: [MissingControllerException] Controller class CompanyController could not be found.
+Exception Attributes: array (
+  'class' => 'CompanyController',
+  'plugin' => NULL,
+)
+Request URL: /company
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:16:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:40:54 Error: [MissingControllerException] Controller class CompanyController could not be found.
+Exception Attributes: array (
+  'class' => 'CompanyController',
+  'plugin' => NULL,
+)
+Request URL: /company
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:45:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 09:48:10 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /company
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('parseCriteria', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('parseCriteria', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(799): DboSource->query('parseCriteria', Array, Object(AppModel))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php(29): Model->__call('parseCriteria', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php(29): AppModel->parseCriteria(Array)
+#7 [internal function]: CompanyController->index()
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CompanyController), Array)
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CompanyController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-08 09:51:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Contact.first_name' in 'field list'
+Request URL: /company
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('SELECT `Company...', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `Company...', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(1080): DboSource->fetchAll('SELECT `Company...', false)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(2674): DboSource->read(Object(Company), Array)
+#5 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Component/PaginatorComponent.php(195): Model->find('all', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(1073): PaginatorComponent->paginate(NULL, Array, Array)
+#7 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php(36): Controller->paginate()
+#8 [internal function]: CompanyController->index()
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CompanyController), Array)
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CompanyController), Object(CakeRequest), Object(CakeResponse))
+#12 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-02-08 09:57:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Contact.first_name' in 'field list'
+Request URL: /company
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('SELECT `Company...', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `Company...', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(1080): DboSource->fetchAll('SELECT `Company...', false)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(2674): DboSource->read(Object(Company), Array)
+#5 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Component/PaginatorComponent.php(195): Model->find('all', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(1073): PaginatorComponent->paginate(NULL, Array, Array)
+#7 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php(36): Controller->paginate()
+#8 [internal function]: CompanyController->index()
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CompanyController), Array)
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CompanyController), Object(CakeRequest), Object(CakeResponse))
+#12 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-02-08 09:57:41 Error: [MissingViewException] View file "/Users/Guanhao/Documents/Projects/Warehouse/app/View/Themed/Default/Company/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/Guanhao/Documents/Projects/Warehouse/app/View/Themed/Default/Company/index.ctp',
+)
+Request URL: /company
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CompanyController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-02-08 11:48:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 11:49:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 11:53:06 Error: [MissingActionException] Action ContactsController::assets() could not be found.
+Exception Attributes: array (
+  'controller' => 'ContactsController',
+  'action' => 'assets',
+)
+Request URL: /contacts/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(ContactsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-08 11:53:53 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-08 11:57:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 06:11:35 Error: [MissingActionException] Action UsersController::assets() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'assets',
+)
+Request URL: /users/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-09 06:12:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 06:19:28 Error: [MissingViewException] View file "/Users/Guanhao/Documents/Projects/Warehouse/app/View/Themed/Default/Company/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/Guanhao/Documents/Projects/Warehouse/app/View/Themed/Default/Company/index.ctp',
+)
+Request URL: /company
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CompanyController), Object(CakeRequest), Object(CakeResponse))
+#4 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-02-09 06:24:46 Error: [MissingControllerException] Controller class CompaniesController could not be found.
+Exception Attributes: array (
+  'class' => 'CompaniesController',
+  'plugin' => NULL,
+)
+Request URL: /companies
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 06:29:15 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php, line 127]
+2014-02-09 06:29:15 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /company/add
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 127)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 127, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 127, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-09 06:30:12 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php, line 127]
+2014-02-09 06:30:12 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /company/add
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 127)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 127, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 127, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-09 06:32:49 Error: Fatal Error (1): Call to a member function create() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php, line 132]
+2014-02-09 06:32:49 Error: [FatalErrorException] Call to a member function create() on a non-object
+Request URL: /company/add
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 132)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 132, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 132, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-09 06:38:04 Error: [MissingActionException] Action CompanyController::assets() could not be found.
+Exception Attributes: array (
+  'controller' => 'CompanyController',
+  'action' => 'assets',
+)
+Request URL: /company/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CompanyController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-09 07:05:09 Error: [MissingTableException] Table aros for model Aro was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'aros',
+  'class' => 'Aro',
+  'ds' => 'default',
+)
+Request URL: /users/edit/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(3217): Model->setSource('aros')
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/AclNode.php(62): Model->getDataSource()
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Behavior/AclBehavior.php(90): AclNode->node(Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Behavior/AclBehavior.php(108): AclBehavior->node(Object(User), Array, 'Aro')
+#4 [internal function]: AclBehavior->afterSave(Object(User), false, Array)
+#5 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(1762): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(179): Model->save(Array)
+#10 [internal function]: UsersController->edit('1')
+#11 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#13 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#14 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2014-02-09 07:13:48 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /users
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('parseCriteria', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('parseCriteria', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(799): DboSource->query('parseCriteria', Array, Object(User))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(99): Model->__call('parseCriteria', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(99): User->parseCriteria(Array)
+#7 [internal function]: UsersController->index()
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-09 07:14:32 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /users
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('parseCriteria', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('parseCriteria', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(799): DboSource->query('parseCriteria', Array, Object(User))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(99): Model->__call('parseCriteria', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(99): User->parseCriteria(Array)
+#7 [internal function]: UsersController->index()
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-09 07:14:42 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /users
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('parseCriteria', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('parseCriteria', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(799): DboSource->query('parseCriteria', Array, Object(User))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(99): Model->__call('parseCriteria', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(99): User->parseCriteria(Array)
+#7 [internal function]: UsersController->index()
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-09 07:22:50 Error: Fatal Error (1): Call to a member function user() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Model/User.php, line 74]
+2014-02-09 07:22:50 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /users/edit/6
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 74)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 74, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 74, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-09 07:23:12 Error: Fatal Error (1): Call to a member function user() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Model/User.php, line 74]
+2014-02-09 07:23:12 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /users/edit/6
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 74)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 74, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 74, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-09 07:25:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 07:25:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 12:18:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 12:18:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 12:18:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 12:18:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-09 12:27:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:10:40 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:10:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:10:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:14:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:15:41 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/DashboardsController.php, line 11]
+2014-02-10 16:15:41 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dashboards
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 11)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 11, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 11, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-10 16:15:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:16:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:16:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:17:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:17:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:23:02 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:27:43 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:27:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:28:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:29:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:32:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:32:34 Error: Fatal Error (1): Call to a member function exists() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/CompanyController.php, line 94]
+2014-02-10 16:32:34 Error: [FatalErrorException] Call to a member function exists() on a non-object
+Request URL: /company/view/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 94)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 94, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 94, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-10 16:34:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:38:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 16:49:05 Error: [MissingActionException] Action StockController::assets() could not be found.
+Exception Attributes: array (
+  'controller' => 'StockController',
+  'action' => 'assets',
+)
+Request URL: /stock/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(StockController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-10 17:13:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 17:17:05 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => 'FullCalendar',
+)
+Request URL: /full_calendar/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 18:12:12 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/StockController.php, line 131]
+2014-02-10 18:12:12 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /stock/add
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 131)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 131, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 131, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-10 18:19:06 Error: [MissingActionException] Action UsersController::assets() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'assets',
+)
+Request URL: /users/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-10 18:23:18 Error: [MissingActionException] Action StockController::review() could not be found.
+Exception Attributes: array (
+  'controller' => 'StockController',
+  'action' => 'review',
+)
+Request URL: /stock/review/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(StockController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-10 18:24:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 18:24:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-10 18:25:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

@@ -17,9 +17,9 @@
 		<div class="controls">
 			<div class="btn-group" data-toggle="buttons-radio" data-toggle-name="contact_status_id">
 			<?php foreach ($contactstatuses as $key=>$value):?>
-				<?php if ($value=='Lead') $color_class='btn-danger';
-				else if($value=='Opportunity') $color_class='btn-warning';
-				else if($value=='Account') $color_class='btn-success';
+				<?php if ($value=='Dealer') $color_class='btn-danger';
+				else if($value=='Distributor') $color_class='btn-warning';
+				else if($value=='Supplier') $color_class='btn-success';
 				else $color_class='btn-info';?>
 			  <button type="button" class="btn <?php echo $color_class; ?>" value="<?php echo $key; ?>">
 			  <?php echo $value; ?>

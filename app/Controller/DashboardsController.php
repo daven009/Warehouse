@@ -2,16 +2,16 @@
 App::uses('CakeTime', 'Utility');
 class DashboardsController extends AppController {
 	
-	public $uses = array('Contact','Deal','Event');
+	public $uses = array('Company','Deal','Event');
 	
 	public function index(){
 		
 		$current_user_id = $this->Auth->User('id');
 		
-		$contacts = $this->Contact->find('all',array(
+		$companies = $this->Company->find('all',array(
 				'limit'=> 4,
 				'conditions'=>array(
-						'Contact.user_id'=>$current_user_id
+// 						'Company.id <>'=>$this->Auth->user('company_id')
 						)));
 		
 		$deals = $this->Deal->find('all',array(
@@ -26,7 +26,7 @@ class DashboardsController extends AppController {
 						'Event.user_id'=>$current_user_id
 						)));
 		
-		$this->set('contacts',$contacts);
+		$this->set('companies',$companies);
 		$this->set('deals',$deals);
 		$this->set('events',$events);
 		

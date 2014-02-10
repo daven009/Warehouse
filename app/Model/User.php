@@ -1,6 +1,6 @@
 <?php
 class User extends AppModel {
-	public $belongsTo = 'Group';
+	public $belongsTo = array('Group','Company');
 	
 	//public $hasMany = 'Contact';
 	
@@ -23,7 +23,7 @@ class User extends AppModel {
         )
     );
 	
-	public $actsAs = array('Acl' => array('type' => 'requester'),
+	public $actsAs = array(
 			'Search.Searchable'
 	);
 	
@@ -32,12 +32,14 @@ class User extends AppModel {
 			'search_name' => array('type'=>'like','field'=>array('User.first_name','User.last_name')),
 			'search_group' => array('type'=>'value','field'=>'Group.name'),
 			'search_email' => array('type'=>'value','field'=>'User.email'),
+			'search_company_id' => array('type'=>'value','field'=>'User.company_id'),
 			'search_all' => array('type'=>'query','method'=>'searchDefault')
 	);
 	
 	public function searchDefault($data = array()) {
 		$filter = $data['search_all'];
 		$cond = array(
+				'AND'=> array($this->alias . '.company_id ' => $this->Auth->user('company_id')),
 				'OR' => array(
 						$this->alias . '.username LIKE' => '%' . $filter . '%',
 						$this->alias . '.first_name LIKE' => '%' . $filter . '%',
@@ -63,12 +65,11 @@ class User extends AppModel {
 		}
 	}
 	
-
-	
 	public function beforeSave($options = array()) {
 		if (isset($this->data[$this->alias]['password'])) {
 	        $this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
 	    }
+	    $this->data[$this->alias]['company_id'] = CakeSession::read("Auth.User.company_id");
 		return true;
 	}
 }

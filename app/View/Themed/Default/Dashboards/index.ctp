@@ -8,41 +8,42 @@ echo $this->Html->script('jqplot/plugins/jqplot.canvasAxisTickRenderer.min');
 echo $this->Html->css('jqplot/jquery.jqplot.min');
 ?>
 <div class="row">
+	<?php if($this->Session->read('Auth.User.group_id')==9999):?>
 	<div class="span6">
-		<h3 class="title-dashboard"><?php echo $this->Html->link(__('My Contacts'),array('plugin'=>'','controller'=>'contacts')); ?> <a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'contacts','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New'); ?></a></h3>
+		<h3 class="title-dashboard"><?php echo $this->Html->link(__('Companies'),array('plugin'=>'','controller'=>'company')); ?> <a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'company','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New'); ?></a></h3>
 		<div>
 			<table class="table table-bordered table-striped table-striped-warning">
 				<thead class="warning">
-					<?php echo $this->Html->tableHeaders(array(__('Name'), __('Status'), __('Company'), __('City'), '<i class="icon-phone"></i> '.__('Phone #')));?>
+					<?php echo $this->Html->tableHeaders(array(__('Name'), __('Type'), __('Address'), __('Postal Code')));?>
 				</thead>
 				<tbody>
-					<?php foreach($contacts as $contact): ?>
+					<?php foreach($companies as $company): ?>
 					<tr>
-						<td><a href="<?php echo $this->Html->url(array('controller' => 'contacts', 'action' => 'view', $contact['Contact']['id'])); ?>"><?php echo $contact['Contact']['full_name']; ?></a></td>
+						<td><a href="<?php echo $this->Html->url(array('controller' => 'company', 'action' => 'view', $company['Company']['id'])); ?>"><?php echo $company['Company']['name']; ?></a></td>
 						<td>
 						<?php
-							if ($contact['ContactStatus']['name']=='Lead'){
+							if ($company['CompanyGroup']['name']=='Dealer'){
 								
-								echo '<span class="label label-important">' . $contact['ContactStatus']['name'] . '</span>';
+								echo '<span class="label label-important">' . $company['CompanyGroup']['name'] . '</span>';
 							}
-							else if($contact['ContactStatus']['name']=='Opportunity'){
-								echo '<span class="label label-warning">' . $contact['ContactStatus']['name'] . '</span>';
+							else if($company['CompanyGroup']['name']=='Distributor'){
+								echo '<span class="label label-warning">' . $company['CompanyGroup']['name'] . '</span>';
 								
 							}
-							else if($contact['ContactStatus']['name']=='Account'){
-								echo '<span class="label label-success">' . $contact['ContactStatus']['name'] . '</span>';
+							else if($company['CompanyGroup']['name']=='Supplier'){
+								echo '<span class="label label-success">' . $company['CompanyGroup']['name'] . '</span>';
 							}
 						?>
 						</td>
-						<td><?php echo $contact['Contact']['company']; ?></td>
-						<td><?php echo $contact['Contact']['city']; ?></td>
-						<td><?php echo $contact['Contact']['phone']; ?></td>
+						<td><?php echo $company['Company']['address']; ?></td>
+						<td><?php echo $company['Company']['postal_code']; ?></td>
 					</tr>
 					<?php endforeach; ?>
 				</tbody>
 			</table>
 		</div>
 	</div>
+	<?php endif;?>
 	<div class="span6">
 		<h3><?php echo __('Deal Growth Chart'); ?></h3>
 		<div class="chart-box">
@@ -57,13 +58,13 @@ echo $this->Html->css('jqplot/jquery.jqplot.min');
 		<div>
 			<table class="table table-bordered table-striped table-striped-success">
 				<thead class="success">
-					<?php echo $this->Html->tableHeaders(array(__('Amount'), __('Contact Name'), __('Status'),__('Date'))); ?>
+					<?php echo $this->Html->tableHeaders(array(__('Amount'), __('Company Name'), __('Status'),__('Date'))); ?>
 				</thead>
 				<tbody>
 					<?php foreach($deals as $deal): ?>
 					<tr>
 						<td><a href="<?php echo $this->Html->url(array('controller' => 'deals', 'action' => 'view', $deal['Deal']['id'])); ?>"><?php echo $this->Number->currency($deal['Deal']['amount'],'USD',array('before'=>$currency)); ?></a></td>
-						<td><?php echo $deal['Contact']['full_name']; ?></td>
+						<td><?php echo $deal['Company']['full_name']; ?></td>
 						<td><?php if($deal['DealStatus']['name']=='Process'){
 							echo '<span class="label label-warning">'.$deal['DealStatus']['name'].'</span>'; 
 						}

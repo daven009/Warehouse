@@ -90,6 +90,7 @@ class UsersController extends AppController {
 				$searched = true;
 			}
 		}
+		$this->passedArgs['search_company_id'] = $this->Auth->user('company_id');
 		$this->set('searched',$searched);
 		
 		$this->Prg->commonProcess();
@@ -101,6 +102,7 @@ class UsersController extends AppController {
 						'User.id' => 'asc'
 				)
 		);
+// 		var_dump($this->passedArgs);exit;
 		$this->set('users',$this->paginate());
 	}
 	
