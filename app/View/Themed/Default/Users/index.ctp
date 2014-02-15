@@ -1,7 +1,15 @@
 <div>
 	<div>
-		<h3><?php echo __('Users'); ?>
-		<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'users','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New')?></a>
+		<h3>
+		<?php echo __('Users'); ?>
+		<?php if($back):?>
+			<?php echo " for ".$company['Company']['name']?>
+			<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'users','action'=>'add',$company['Company']['id'])); ?>"><i class="icon-plus"></i> <?php echo __('New')?></a>
+			<a class="btn btn-info btn-mini" href="<?php echo $this->Html->url(array('controller'=>'company','action'=>'index')); ?>"><i class="icon-reply"></i> <?php echo __('Back')?></a>
+		<?php else:?>
+			<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'users','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New')?></a>
+		<?php endif;?>
+		
 		<?php echo $this->Form->create('User', array('url' => array_merge(array('action' => 'index'), $this->params['pass']),'class'=>'navbar-search pull-right')); ?>
 	  		<div class="input-append">
 	  		<?php echo $this->Form->input('search_all',array('div'=>false,'class'=>'span2','placeholder'=>'Search','label'=>false)); ?>

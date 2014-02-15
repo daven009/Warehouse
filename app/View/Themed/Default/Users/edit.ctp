@@ -1,7 +1,7 @@
 <div class="row">
 <div class="span5 offset3 edit-user-box">
 	<h3><?php echo __('Edit User'); ?>
-	<?php if (AuthComponent::user('group_id')==1):?>
+	<?php if (AuthComponent::user('group_id')==ADMINISTRATOR):?>
 	<a href="<?php echo $this->Html->url(array('controller'=>'users','action'=>'add')); ?>" class="btn btn-success btn-mini"><i class="icon-plus"></i></a>
 	<a href="<?php echo $this->Html->url(array('controller'=>'users','action'=>'index')); ?>" class="btn btn-info btn-mini"><i class="icon-user"></i>&nbsp;<?php echo __('User List'); ?></a>
 	<?php endif; ?>
@@ -12,7 +12,7 @@
         echo $this->Form->input('new_password',array('type'=>'password','label'=>'New Password'));
         echo $this->Form->input('confirm',array('type'=>'password','label'=>'Confirm New Password'));
         
-        if ((AuthComponent::user('group_id')==1) and (AuthComponent::user('id') != $this->request->data['User']['id'])) 
+        if ((AuthComponent::user('group_id')==ADMINISTRATOR) and (AuthComponent::user('id') != $this->request->data['User']['id'])) 
         	echo $this->Form->input('group_id',array('options'=>$grouplist));
         else
         	echo $this->Form->input('group',array('value'=>$grouplist[$this->request->data['User']['group_id']],'class'=>'uneditable-input'));
@@ -20,11 +20,11 @@
         echo $this->Form->input('first_name');
         echo $this->Form->input('last_name');
         echo $this->Form->input('email');
-        if (AuthComponent::user('group_id')==1 and (AuthComponent::user('id') != $this->request->data['User']['id'])) echo $this->Form->input('active');
+        if (AuthComponent::user('group_id')==ADMINISTRATOR and (AuthComponent::user('id') != $this->request->data['User']['id'])) echo $this->Form->input('active');
     ?>
     <div class="form-actions">
 	<?php echo $this->Form->submit('<i class="icon-save"></i> '.__('Save'),array( 'div'=>false,'class'=>'btn btn-info')); ?>
-	<?php if (($this->request->data['User']['id'] != AuthComponent::user('id')) and (AuthComponent::user('group_id') == 1 )) :?>
+	<?php if (($this->request->data['User']['id'] != AuthComponent::user('id')) and (AuthComponent::user('group_id') == ADMINISTRATOR )) :?>
 	<a href="#" class="btn btn-danger cdelete" ><i class="icon-trash"></i>&nbsp;<?php echo __('Delete'); ?></a>
 	<?php endif; ?>
 	</div>

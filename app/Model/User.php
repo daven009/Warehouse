@@ -69,7 +69,7 @@ class User extends AppModel {
 		if (isset($this->data[$this->alias]['password'])) {
 	        $this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
 	    }
-	    $this->data[$this->alias]['company_id'] = CakeSession::read("Auth.User.company_id");
+// 	    $this->data[$this->alias]['company_id'] = CakeSession::read("Auth.User.company_id");
 		return true;
 	}
 }

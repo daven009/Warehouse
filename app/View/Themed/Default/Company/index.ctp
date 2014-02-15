@@ -93,6 +93,9 @@
 			<td><?php echo $company['Company']['address']; ?></td>
 			<td><?php echo $company['Company']['postal_code']; ?></td>
 			<td>
+				<?php if (AuthComponent::user('group_id')==SUPERADMIN):?>
+				<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'index', $company['Company']['id'])); ?>"><i class="icon-user"></i></a>
+				<?php endif;?>
 				<a href="<?php echo $this->Html->url(array('controller' => 'company', 'action' => 'edit', $company['Company']['id'])); ?>"><i class="icon-edit"></i></a>
 			</td>
 		</tr>

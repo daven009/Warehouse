@@ -1,58 +1,59 @@
-<div class="edit-contact-container">
-	<div><h3><?php echo __('Edit Company'); ?></h3></div>
-	<div class="edit-contact-box">
-	<?php echo $this->Form->create('Company',array('action'=>'edit', 'class'=>'form-horizontal')); ?>
-	<fieldset>
-	<div class="control-group head-group" >
-		<label class="control-label"><?php echo __('Company Group'); ?></label>
-		<div class="controls">
-			<div class="btn-group" data-toggle="buttons-radio" data-toggle-name="company_group_id">
-			<?php foreach ($companygroups as $key=>$value):?>
-				<?php if ($value=='Dealer') $color_class='btn-danger';
-				else if($value=='Distributor') $color_class='btn-warning';
-				else if($value=='Supplier') $color_class='btn-success';
-				else $color_class='btn-info';?>
-			  <button type="button" class="btn <?php echo $color_class; ?>" value="<?php echo $key; ?>">
-			  <?php echo $value; ?>
-			  </button>
-			  <?php endforeach; ?>
-			</div>
-		</div>
-	</div>
-	<?php echo $this->Form->input('name',array('type'=>'text','class'=>'input-xlarge')); ?>
-	<?php echo $this->Form->input('address',array('type'=>'text','class'=>'input-xlarge')); ?>
-	<?php echo $this->Form->input('postal_code',array('type'=>'text','class'=>'input-xlarge')); ?>
-	<?php echo $this->Form->input('company_group_id',array('type'=>'hidden')); ?>
-	<div class="form-actions">
-	<?php echo $this->Form->submit('<i class="icon-save"></i>'.__(' Save'),array( 'div'=>false,'class'=>'btn btn-info')); ?>
-	&nbsp;<a href="<?php echo $this->Html->url(array('controller'=>'company','action'=>'index')); ?>" class="btn btn-primary"><i class="icon-reply"></i>&nbsp;<?php echo __('Cancel'); ?></a>
+<div class="row">
+<div class="span5 offset3 edit-user-box">
+	<h3><?php echo __('Edit Product'); ?>
+	<?php if (AuthComponent::user('group_id')==ADMINISTRATOR || AuthComponent::user('group_id')==SUPERADMIN):?>
+	<a href="<?php echo $this->Html->url(array('controller'=>'good','action'=>'add')); ?>" class="btn btn-success btn-mini"><i class="icon-plus"></i></a>
+	<a href="<?php echo $this->Html->url(array('controller'=>'good','action'=>'index')); ?>" class="btn btn-info btn-mini"><i class="icon-user"></i>&nbsp;<?php echo __('Product List'); ?></a>
+	<?php endif; ?>
+	</h3>
+<?php echo $this->Form->create('Good',array('url'=>array('controller'=>'good','action'=>'edit'), 'class'=>'form-horizontal')); ?>
+    <fieldset>
+        <?php 
+        echo $this->Form->input('name',array('type'=>'text'));
+        echo $this->Form->input('description',array('type'=>'text'));
+        echo $this->Form->input('unit',array('type'=>'text'));
+        echo $this->Form->input('sales_price',array('type'=>'text'));
+        echo $this->Form->input('remark',array('type'=>'textarea'));
+    ?>
+    <div class="form-actions">
+	<?php echo $this->Form->submit('<i class="icon-save"></i> '.__('Save'),array( 'div'=>false,'class'=>'btn btn-info')); ?>
+	<?php if (AuthComponent::user('group_id')==ADMINISTRATOR||AuthComponent::user('group_id')==SUPERADMIN) :?>
 	<a href="#" class="btn btn-danger cdelete" ><i class="icon-trash"></i>&nbsp;<?php echo __('Delete'); ?></a>
+	<?php endif; ?>
 	</div>
-	</fieldset>
-	<?php echo $this->Form->end(); ?>
-	</div>
+    </fieldset>
+<?php echo $this->Form->end(); ?>
+</div>
 </div>
 <script>
-jQuery(function($) {
-	  $('div.btn-group[data-toggle-name]').each(function(){
-	    var group   = $(this);
-	    var form    = group.parents('form').eq(0);
-	    var name    = "data[Company][company_group_id]";
-	    var hidden  = $('input[name="' + name + '"]', form);
-	    $('button', group).each(function(){
-	      var button = $(this);
-	      button.live('click', function(){
-	          hidden.val($(this).val());
-	      });
-	      if(button.val() == hidden.val()) {
-	        button.addClass('active');
-	      }
-	    });
-	  });
-	});
+$(document).ready(function(){
+	$("#GoodEditForm").validate({
+
+		rules: {
+			"data[Good][new_password]":{
+				//required: false,
+				minlength:5,
+
+				},
+			"data[Good][confirm]":{
+				//required: false,
+				minlength:5,
+				equalTo: "#GoodNewPassword"
+
+				}
+		},
+		messages: {
+			"data[Good][new_password]":"<?php echo __('Please check this field'); ?>",
+			"data[Good][confirm]":{equalTo:"<?php echo __('make sure both match'); ?>"}
+		},
+		errorElement:"span"
+
+		});
+});
 </script>
-<form name="del" id="del" action="<?php echo $this->Html->url(array('controller'=>'company','action'=>'delete'));?>" method="post">
-<input type="hidden" name="id" id="delid" value="<?php echo $this->request->data['Company']['id']; ?>">
+<?php if (($this->request->data['Good']['id'] != AuthComponent::user('id')) and (AuthComponent::user('group_id') == 1 )) :?>
+<form name="del" id="del" action="<?php echo $this->Html->url(array('controller'=>'good','action'=>'delete',$this->request->data['Good']['id']));?>" method="post">
+<input type="hidden" name="id" id="delid" value="<?php echo $this->request->data['Good']['id']; ?>">
 </form>
 <script>
 
@@ -95,9 +96,9 @@ jQuery(function($) {
   $(".cdelete").live("click", function(event) {
 
 
-    var heading = '<?php echo __('Confirm Delete')?>';
-    var question = '<?php echo __('Are you sure, you want to delete this company!')?>';
-    var cancelButtonTxt = '<?php echo __('Cancel') ?>';
+    var heading = '<?php echo __('Confirm Delete'); ?>';
+    var question = '<?php echo __('Are you sure, you want to delete this Good!'); ?>';
+    var cancelButtonTxt = '<?php echo __('Cancel'); ?>';
     var okButtonTxt = '<?php echo __('Delete'); ?>';
 
     var callback = function() {
@@ -109,3 +110,4 @@ jQuery(function($) {
 
   });
 </script>
+<?php endif; ?>

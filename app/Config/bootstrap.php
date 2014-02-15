@@ -179,3 +179,29 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+//Define user group
+if (!defined('ADMINISTRATOR')) {
+	define('ADMINISTRATOR', 1);
+}
+
+if (!defined('EMPLOYEE')) {
+	define('EMPLOYEE', 2);
+}
+
+if (!defined('SUPERADMIN')) {
+	define('SUPERADMIN', 9999);
+}
+
+//Define company group
+if (!defined('DEALER')) {
+	define('DEALER', 1);
+}
+
+if (!defined('DISTRIBUTOR')) {
+	define('DISTRIBUTOR', 2);
+}
+
+if (!defined('SUPPLIER')) {
+	define('SUPPLIER', 3);
+}

@@ -82,15 +82,27 @@ class UsersController extends AppController {
 		$this->redirect($this->Auth->logout());
 	}
 	
-	public function index(){
+	public function index($company_id=NULL){
 		$searched = false;
+		$back = false;
 		if ($this->passedArgs) {
 			$args = $this->passedArgs;
 			if(isset($args['search_name'])){
 				$searched = true;
 			}
 		}
-		$this->passedArgs['search_company_id'] = $this->Auth->user('company_id');
+		
+		if(!is_null($company_id) && $this->Auth->user('group_id')==SUPERADMIN){
+			$this->loadModel('Company');
+			$this->passedArgs['search_company_id'] = $company_id;
+			$company = $this->Company->find('first',array('conditions'=>array('Company.id'=>$company_id)));
+			$this->set(compact('company'));
+			$back = true;
+		}else{
+			$this->passedArgs['search_company_id'] = $this->Auth->user('company_id');
+		}
+		
+		$this->set(compact('back'));
 		$this->set('searched',$searched);
 		
 		$this->Prg->commonProcess();
@@ -114,8 +126,14 @@ class UsersController extends AppController {
 		$this->set('user', $this->User->read(null, $id));
 	}
 	
-	public function add(){
+	public function add($company_id=NULL){
 		if ($this->request->is('post')) {
+			if(!is_null($company_id) && $this->Auth->user('group_id')==SUPERADMIN){
+				$this->request->data['User']['company_id'] = $company_id;
+			}else{
+				$this->request->data['User']['company_id'] = $this->Auth->user('company_id');
+			}
+// 			var_dump($this->request->data['User']['company_id']);exit;
 			$user_with_this_username = $this->User->findByUsername($this->request->data['User']['username']);
 			$user_with_this_email = $this->User->findByEmail($this->request->data['User']['email']);
 			if(!empty($user_with_this_username)) {
@@ -139,7 +157,7 @@ class UsersController extends AppController {
 					$email->viewVars(array('username'=>$this->request->data['User']['email'],'password'=>$this->request->data['User']['password']));
 					$email->send(_('New user added mail'));
 					$this->Session->setFlash(__('The user has been saved'));
-					$this->redirect(array('action' => 'index'));
+					$this->redirect(array('action' => 'index',$company_id));
 				} else {
 					$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 				}

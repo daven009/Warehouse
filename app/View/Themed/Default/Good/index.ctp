@@ -1,7 +1,9 @@
 <div>
 	<div>
-		<h3><?php echo __('Good'); ?>
+		<h3><?php echo __('Products'); ?>
+		<?php if((AuthComponent::user('group_id')==ADMINISTRATOR || AuthComponent::user('group_id')==SUPERADMIN) && $CompanyRole==DEALER):?>
 		<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'good','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New')?></a>
+		<?php endif;?>
 		<?php echo $this->Form->create('Good', array('class'=>'navbar-search pull-right')); ?>
 	  		<div class="input-append">
 	  		<?php echo $this->Form->input('search_all',array('div'=>false,'class'=>'span2','placeholder'=>'Search','label'=>false)); ?>
@@ -63,7 +65,9 @@
 			<td><?php echo $good['Good']['sales_price']; ?></td>
 			<td><?php echo $good['Good']['remark']; ?></td>
 			<td>
+				<?php if((AuthComponent::user('group_id')==ADMINISTRATOR||AuthComponent::user('group_id')==SUPERADMIN) && $CompanyRole==DEALER):?>
 				<a href="<?php echo $this->Html->url(array('controller' => 'good', 'action' => 'edit', $good['Good']['id'])); ?>"><i class="icon-edit"></i></a>
+				<?php endif;?>
 			</td>
 		</tr>
 		<?php endforeach;?>

@@ -118,6 +118,15 @@ class AppController extends Controller {
 		else {
 			$this->set('logo','');
 		}*/
+		
+		$CompanyRole = false;
+		if($this->Auth->loggedIn()){
+			$this->loadModel('Company');
+			$company_id = $this->Auth->user('company_id');
+			$company = $this->Company->find('first',array('recursive'=>-1,'conditions'=>array('Company.id'=>$company_id)));
+			$CompanyRole = $company['Company']['company_group_id'];
+		}
+		$this->set(compact('CompanyRole'));
 	}
 	
 	public function beforeRender()

@@ -1,7 +1,7 @@
 <div class="row">
 <div class="span5 offset3 add-user-box">
 <h3><?php echo __('Add New User'); ?></h3>
-<?php echo $this->Form->create('User',array('action'=>'add', 'class'=>'form-horizontal')); ?>
+<?php echo $this->Form->create('User',array('class'=>'form-horizontal')); ?>
     <fieldset>
        
         <?php echo $this->Form->input('username');

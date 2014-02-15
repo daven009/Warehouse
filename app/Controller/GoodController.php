@@ -60,7 +60,7 @@ class GoodController extends AppController {
 			throw new NotFoundException(__('Record not found'));
 		}
 		$extra_msg = '';
-		if($this->request->is('post')){
+		if(!empty($this->request->data)){
 			if($this->Good->save($this->request->data)){
 				$this->Session->setFlash(__('Good data saved'),'alert');
 				$this->redirect(array('action'=>'index'));
@@ -86,7 +86,7 @@ class GoodController extends AppController {
 		}
 		
 		if($this->Good->delete($id)){
-			$this->Session->setFlash(__('Good deleted'),'alert');
+			$this->Session->setFlash(__('Product deleted'),'alert');
 			$this->redirect(array('action'=>'index'));
 		}
 		else
