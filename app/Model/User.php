@@ -39,7 +39,7 @@ class User extends AppModel {
 	public function searchDefault($data = array()) {
 		$filter = $data['search_all'];
 		$cond = array(
-				'AND'=> array($this->alias . '.company_id ' => $this->Auth->user('company_id')),
+				'AND'=> array($this->alias . '.company_id ' => AuthComponent::user('company_id')),
 				'OR' => array(
 						$this->alias . '.username LIKE' => '%' . $filter . '%',
 						$this->alias . '.first_name LIKE' => '%' . $filter . '%',

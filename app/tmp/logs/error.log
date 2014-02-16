@@ -1364,3 +1364,382 @@ Request URL: /css/jqplot/jquery.jqplot.min.css
 Stack Trace:
 #0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-02-15 18:27:17 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:31:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:33:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:35:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:36:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:37:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:37:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:38:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-15 18:38:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:02:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:02:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:03:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:03:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:03:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:03:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:04:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:04:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:06:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:10:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:10:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:11:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:13:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:13:13 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:14:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 14:15:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 15:11:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 15:11:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 15:14:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 16:16:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 16:18:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 16:23:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /quotation
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('parseCriteria', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('parseCriteria', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(799): DboSource->query('parseCriteria', Array, Object(AppModel))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/QuotationController.php(31): Model->__call('parseCriteria', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/QuotationController.php(31): AppModel->parseCriteria(Array)
+#7 [internal function]: QuotationController->index()
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(QuotationController), Array)
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-16 16:28:21 Error: Fatal Error (64): Cannot redeclare class Deal in [/Users/Guanhao/Documents/Projects/Warehouse/app/Model/Quotation.php, line 41]
+2014-02-16 16:28:21 Error: [FatalErrorException] Cannot redeclare class Deal
+Request URL: /quotation
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', '/Users/Guanhao/...', 41)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', '/Users/Guanhao/...', 41, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', '/Users/Guanhao/...', 41, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-16 16:44:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 16:50:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 16:50:49 Error: [MissingActionException] Action QuotationController::assets() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuotationController',
+  'action' => 'assets',
+)
+Request URL: /quotation/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-16 17:03:49 Error: [MissingControllerException] Controller class QuotationsController could not be found.
+Exception Attributes: array (
+  'class' => 'QuotationsController',
+  'plugin' => NULL,
+)
+Request URL: /quotations/index/self
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 17:03:50 Error: [MissingControllerException] Controller class QuotationsController could not be found.
+Exception Attributes: array (
+  'class' => 'QuotationsController',
+  'plugin' => NULL,
+)
+Request URL: /quotations/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-16 17:04:51 Error: Fatal Error (1): Call to a member function user() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Model/User.php, line 42]
+2014-02-16 17:04:51 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /users/index/search_all:aa
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 42, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 42, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-16 17:05:34 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/Users/Guanhao/Documents/Projects/Warehouse/app/Model/User.php, line 49]
+2014-02-16 17:05:34 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /users/index/search_all:aa
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/Guanhao/...', 49)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/Guanhao/...', 49, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/Guanhao/...', 49, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-16 17:39:30 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /quotation/index/self
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('parseCriteria', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('parseCriteria', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(611): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(799): DboSource->query('parseCriteria', Array, Object(Quotation))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/QuotationController.php(39): Model->__call('parseCriteria', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/QuotationController.php(39): Quotation->parseCriteria(Array)
+#7 [internal function]: QuotationController->index('self')
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(QuotationController), Array)
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}

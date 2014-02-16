@@ -96,7 +96,35 @@
 		          		<li class="dropdown <?php if($this->params['controller']=='deals') echo 'active'; ?>">
 		          		<a class="dropdown-toggle" data-toggle="dropdown" data-target="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'deals','action'=>'index')); ?>" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'deals','action'=>'index')); ?>"><span><i class="icon-thumbs-up"></i></span><?php echo __('DEALS'); ?></a>
 		          			<ul class="dropdown-menu">
-		          				<li><a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'deals','action'=>'add'));?>" ><i class="icon-plus"></i> <?php echo __('New Deal'); ?></a></li>
+		          				<li>
+		          					<a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'deals','action'=>'add'));?>" >
+		          						<i class="icon-plus"></i> <?php echo __('New Deal'); ?>
+		          					</a>
+		          				</li>
+		          				<?php if($CompanyRole==SUPPLIER||$CompanyRole==DEALER):?>
+		          				<li class="divider"></li>
+				                <li class="dropdown-submenu">
+				                    <a tabindex="-1" href="#">Quotation</a>
+				                    <ul class="dropdown-menu">
+				                      <li><a tabindex="-1" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'quotation','action'=>'index'));?>">To Customer</a></li>
+				                      <?php if($CompanyRole==DEALER):?>
+				                      <li><a tabindex="-1" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'quotation','action'=>'index','self'));?>">From Supplier</a></li>
+				                      <?php endif;?>
+				                    </ul>
+				                </li>
+				                <?php endif;?>
+				                <?php if($CompanyRole==SUPPLIER||$CompanyRole==DEALER):?>
+		          				<li class="divider"></li>
+				                <li class="dropdown-submenu">
+				                    <a tabindex="-1" href="#">Purchase Order</a>
+				                    <ul class="dropdown-menu">
+				                      <li><a tabindex="-1" href="#">From Customer</a></li>
+				                      <?php if($CompanyRole==DEALER):?>
+				                      <li><a tabindex="-1" href="#">To Supplier</a></li>
+				                      <?php endif;?>
+				                    </ul>
+				                </li>
+				                <?php endif;?>
 		          			</ul>
 		          		</li>
 		          		<li class="dropdown <?php if($this->params['plugin']=='full_calendar') echo 'active'; ?>">
@@ -138,11 +166,9 @@
 		</div>
 	</div>
     <div class="container main-wraper">
-
 		<?php echo $this->Session->flash('flash',array('element'=>'alert')); ?>
 		<?php echo $this->Session->flash('auth',array('element'=>'alert')); ?>
 		<?php echo $this->fetch('content'); ?>
-
     </div> <!-- /container -->
 	 <div class="footer">
       <div class="copyright">
