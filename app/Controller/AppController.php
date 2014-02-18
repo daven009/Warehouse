@@ -32,7 +32,8 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-
+	private $_CompanyRole = false;
+	
 	public $theme = 'Default';
 	
 	public $components = array(
@@ -54,7 +55,8 @@ class AppController extends Controller {
 			'Time',
 			'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
 			'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
-			'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator')
+			'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
+			'Status'
 			
     );
 	
@@ -119,14 +121,13 @@ class AppController extends Controller {
 			$this->set('logo','');
 		}*/
 		
-		$CompanyRole = false;
 		if($this->Auth->loggedIn()){
 			$this->loadModel('Company');
 			$company_id = $this->Auth->user('company_id');
 			$company = $this->Company->find('first',array('recursive'=>-1,'conditions'=>array('Company.id'=>$company_id)));
-			$CompanyRole = $company['Company']['company_group_id'];
+			$this->_CompanyRole = $company['Company']['company_group_id'];
 		}
-		$this->set(compact('CompanyRole'));
+		$this->set('CompanyRole',$this->_CompanyRole);
 	}
 	
 	public function beforeRender()
@@ -160,6 +161,22 @@ class AppController extends Controller {
 	
 		// Default deny
 		return true;// allow all for now
+	}
+	
+	function customer_list(){
+		$this->loadModel('Company');
+		switch ($this->_CompanyRole){
+			case SUPPLIER:
+				$company_list = $this->Company->find('list',array('conditions'=>array('Company.company_group_id'=>DEALER)));
+				break;
+			case DEALER:
+				$company_list = $this->Company->find('list',array('conditions'=>array('Company.company_group_id'=>DISTRIBUTOR)));
+				break;
+			default:
+				return false;
+		}
+		
+		return $company_list;
 	}
 		
 }

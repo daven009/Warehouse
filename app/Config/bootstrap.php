@@ -205,3 +205,25 @@ if (!defined('DISTRIBUTOR')) {
 if (!defined('SUPPLIER')) {
 	define('SUPPLIER', 3);
 }
+
+//Define application status
+if (!defined('PENDINGADMIN')) {
+	define('PENDINGADMIN', null);
+}
+
+if (!defined('PENDING')) {
+	define('PENDING', 1);
+}
+
+if (!defined('PARTIAL')) {
+	define('PARTIAL', 2);
+}
+
+if (!defined('COMPLETED')) {
+	define('COMPLETED', 3);
+}
+
+if (!defined('DELIVERED')) {
+	define('DELIVERED', 4);
+}
+

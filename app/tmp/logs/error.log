@@ -1743,3 +1743,163 @@ Stack Trace:
 #10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
 #11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2014-02-18 02:18:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-18 02:38:09 Error: [MissingHelperException] Helper class StatusHelper could not be found.
+Exception Attributes: array (
+  'class' => 'StatusHelper',
+  'plugin' => false,
+)
+Request URL: /quotation/index/self
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(884): HelperCollection->load('Status', Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(463): View->loadHelpers()
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-02-18 02:38:24 Error: [MissingHelperException] Helper class StatusHelper could not be found.
+Exception Attributes: array (
+  'class' => 'StatusHelper',
+  'plugin' => false,
+)
+Request URL: /quotation/index/self
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(884): HelperCollection->load('Status', Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(463): View->loadHelpers()
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-02-18 02:40:33 Error: [MissingHelperException] Helper class StatusHelper could not be found.
+Exception Attributes: array (
+  'class' => 'StatusHelper',
+  'plugin' => false,
+)
+Request URL: /quotation/index/self
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(884): HelperCollection->load('Status', Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(463): View->loadHelpers()
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-02-18 02:40:35 Error: [MissingHelperException] Helper class StatusHelper could not be found.
+Exception Attributes: array (
+  'class' => 'StatusHelper',
+  'plugin' => false,
+)
+Request URL: /quotation/index/self
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(884): HelperCollection->load('Status', Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(463): View->loadHelpers()
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-02-18 02:40:36 Error: [MissingHelperException] Helper class StatusHelper could not be found.
+Exception Attributes: array (
+  'class' => 'StatusHelper',
+  'plugin' => false,
+)
+Request URL: /quotation/index/self
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(884): HelperCollection->load('Status', Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(463): View->loadHelpers()
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2014-02-18 03:03:55 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /quotation/view/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Auth')
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(835): HelperCollection->__isset('Auth')
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/View/Themed/Default/Quotation/view.ctp(81): View->__get('Auth')
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(947): include('/Users/Guanhao/...')
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(909): View->_evaluate('/Users/Guanhao/...', Array)
+#5 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/View/View.php(470): View->_render('/Users/Guanhao/...')
+#6 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#7 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#9 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-02-18 03:18:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-18 03:52:56 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/QuotationController.php, line 64]
+2014-02-18 03:52:56 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /quotation/add
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 64)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 64, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 64, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-18 04:16:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Company.group_id' in 'where clause'
+Request URL: /quotation/add
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('SELECT `Company...', Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `Company...', Array, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Datasource/DboSource.php(1080): DboSource->fetchAll('SELECT `Company...', false)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Model/Model.php(2674): DboSource->read(Object(Company), Array)
+#5 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/AppController.php(170): Model->find('list', Array)
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/QuotationController.php(64): AppController->customer_list()
+#7 [internal function]: QuotationController->add()
+#8 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(QuotationController), Array)
+#9 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#11 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-02-18 09:16:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-18 09:19:56 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-18 09:30:09 Error: Fatal Error (4): syntax error, unexpected end of file in [/Users/Guanhao/Documents/Projects/Warehouse/app/View/Themed/Default/Quotation/view.ctp, line 101]
+2014-02-18 09:30:09 Error: [FatalErrorException] syntax error, unexpected end of file
+Request URL: /quotation/view/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Users/Guanhao/...', 101)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Users/Guanhao/...', 101, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Users/Guanhao/...', 101, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

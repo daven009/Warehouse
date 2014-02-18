@@ -1,7 +1,9 @@
 <div>
 	<div>
 		<h3><?php echo __('Quotations'); ?>
+		<?php if(!in_array('self',$this->params['pass'])):?>
 		<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'quotation','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New'); ?></a>
+		<?php endif?>
 		<?php echo $this->Form->create('Quotation', array('url' => array_merge(array('action' => 'index'), $this->params['pass']),'class'=>'navbar-search pull-right')); ?>
 	  		<div class="input-append">
 	  		<?php echo $this->Form->input('search_all',array('div'=>false,'class'=>'span2','placeholder'=>'Search','label'=>false)); ?>
@@ -72,7 +74,7 @@
 			<td><?php echo $quotation['Quotation']['number']?></td>
 			<td><?php echo $quotation['Customer']['name']; ?></td>
 			<td><?php echo $quotation['Company']['name']; ?></td>
-			<td></td>
+			<td><?php echo $this->Status->format($quotation['Quotation']['status'])?></td>
 			<td><?php echo $quotation['Quotation']['amount']; ?></td>
 			<td><?php echo $quotation['Quotation']['order_date']; ?></td>
 			<td>

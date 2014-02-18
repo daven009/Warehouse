@@ -29,6 +29,7 @@ class QuotationController extends AppController {
 				break;
 			case "self":
 				$this->passedArgs['search_customer_id'] = $this->Auth->user('company_id');
+				$this->passedArgs['search_status'] = !NULL;
 				break;
 		}
 		
@@ -60,14 +61,13 @@ class QuotationController extends AppController {
 	}
 	
 	public function add(){
-		$companygroups = $this->CompanyGroup->find('list');
-		$this->set(compact('companygroups'));
-		
-		if($this->request->is('post')){
-			$this->Company->create();
-			if($this->Company->save($this->request->data)){
-				$this->Session->setFlash(__('New company added'),'alert'); //print_r($this->request->data); exit;
-				$this->redirect(array('action'=>'index'));
+		$customers = $this->customer_list();
+		$this->set(compact('customers'));
+		if(!empty($this->request->data)){
+			$this->Quotation->create();
+			if($this->Quotation->save($this->request->data)){
+				$this->Session->setFlash(__('New quotation added'),'alert'); //print_r($this->request->data); exit;
+				$this->redirect(array('action'=>'view',$this->Quotation->id));
 			}
 			else
 			{

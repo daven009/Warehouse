@@ -1,9 +1,7 @@
 <div>
 	<div class="row-fluid">
 		<div class="span5 view-contact-box">
-			<h3><?php echo __('Quotation Details'); ?>
-				<a href="<?php echo $this->Html->url(array('controller'=>'quotation','action'=>'edit', $quotation['Quotation']['id'])); ?>" class="btn btn-success btn-mini"><i class="icon-edit"></i> <?php echo __('Edit'); ?></a>
-			</h3>
+			<h3><?php echo __('Quotation Details'); ?></h3>
 			<div class="row-fluid">
 				<div class="span12">
 					<table class="table table-condensed">
@@ -35,19 +33,7 @@
 						</tr>
 						<tr>
 							<td><?php echo __('Status:'); ?></td>
-							<td><?php
-							if ($quotation['Quotation']['status']=='Lead'){
-								
-								echo '<span class="label label-important">' . $quotation['Quotation']['status'] . '</span>';
-							}
-							else if($quotation['Quotation']['status']=='Opportunity'){
-								echo '<span class="label label-warning">' . $quotation['Quotation']['status'] . '</span>';
-								
-							}
-							else if($quotation['Quotation']['status']=='Account'){
-								echo '<span class="label label-success">' . $quotation['Quotation']['status'] . '</span>';
-							}
-						?>	</td>
+							<td><?php echo $this->Status->format($quotation['Quotation']['status'])?></td>
 						</tr>
 						<tr>
 							<td><?php echo __('Created:'); ?></td>
@@ -92,7 +78,21 @@
 			  		</div>
 			  	</div>
 			  	<div class="view-contact-back">
-					<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-success'));?>
+			  		<?php if(($quotation['Quotation']['status']==PENDING||$quotation['Quotation']['status']==PENDINGADMIN)):?>
+			  			<?php if($quotation['Quotation']['company_id']==$this->Session->read('Auth.User.company_id')):?>
+			  				<?php if(($this->Session->read('Auth.User.group_id')==ADMINISTRATOR||$this->Session->read('Auth.User.group_id')==SUPERADMIN)&&$quotation['Quotation']['status']==PENDINGADMIN):?>
+			  					<?php echo $this->Html->link(__('Approve'),array('controller'=>'quotation','action'=>'approve',$quotation['Quotation']['id']),array('class'=>'btn btn-success'));?>
+			  				<?php endif;?>
+							<?php echo $this->Html->link(__('Edit'),array('controller'=>'quotation','action'=>'edit',$quotation['Quotation']['id']),array('class'=>'btn btn-primary'));?>
+						<?php elseif($quotation['Quotation']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
+							<?php echo $this->Html->link(__('Confirm'),array('controller'=>'quotation','action'=>'confirm',$quotation['Quotation']['id']),array('class'=>'btn btn-success'));?>
+						<?php endif;?>
+					<?php endif;?>
+					<?php if($quotation['Quotation']['company_id']==$this->Session->read('User.company_id')):?>
+						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-inverse'));?>
+					<?php else:?>
+						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index','self'),array('class'=>'btn btn-inverse'));?>
+					<?php endif;?>
 				</div>
 			</div>
 		</div>

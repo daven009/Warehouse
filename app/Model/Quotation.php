@@ -14,9 +14,10 @@ class Quotation extends AppModel {
 	public $actsAs = array('Search.Searchable');
 	
 	public $filterArgs = array(
+			'search_status' => array('type'=>'value','field'=>array('Quotation.status')),
 			'search_company_id' => array('type'=>'value','field'=>array('Quotation.company_id')),
 			'search_number' => array('type'=>'like','field'=>array('Quotation.number')),
-// 			'search_customer_id' => array('type'=>'value','field'=>array('Quotation.customer_id')),
+			'search_customer_id' => array('type'=>'value','field'=>array('Quotation.customer_id')),
 			'search_company_name' => array('type'=>'like','field'=>array('Customer.name')),
 			'search_date_from' => array('type'=>'expression','method'=>'searchDate','field'=>'Quotation.date BETWEEN ? AND ?'),
 			'search_all' => array('type'=>'query','method'=>'searchDefault')

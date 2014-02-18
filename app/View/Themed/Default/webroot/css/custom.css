@@ -479,3 +479,48 @@ h3.title-dashboard > a:first-child:visited,
 h3.title-dashboard > a:first-child:hover {
 	color: #333333;
 }
+
+
+/***
+Colors
+blue:  #4b8df8
+light blue: #bfd5fa
+red: #e02222
+yellow: #ffb848
+green: #35aa47
+purple: #852b99
+grey: #555555;
+light grey: #fafafa;
+***/
+
+.blue {
+	color: #4b8df8
+}
+
+.blue-lt {
+	color: #bfd5fa
+}
+
+.red {
+	color: #e02222
+}
+
+.yellow {
+	color: #ffb848
+}
+
+.green {
+	color: #35aa47
+}
+
+.purple {
+	color: #852b99
+}
+
+.grey {
+	color: #555555
+}
+
+.grey-lt {
+	color: #fafafa
+}
