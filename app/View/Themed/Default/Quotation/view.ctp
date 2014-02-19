@@ -36,6 +36,10 @@
 							<td><?php echo $this->Status->format($quotation['Quotation']['status'])?></td>
 						</tr>
 						<tr>
+							<td><?php echo __('Remark:'); ?></td>
+							<td><?php $quotation['Quotation']['remark']?></td>
+						</tr>
+						<tr>
 							<td><?php echo __('Created:'); ?></td>
 							<td><?php echo $quotation['Quotation']['created']?></td>
 						</tr>
@@ -57,7 +61,7 @@
 			  			<table class="table table-bordered table-hover table-striped table-striped-success">
 							<thead class="success">
 							<?php
-								echo $this->Html->tableHeaders(array(__('Name'), __('Description'),__('Price'),__('Quantity'),__('Total'), __('Action')));
+								echo $this->Html->tableHeaders(array(__('Name'), __('Description'),__('Price'),__('Quantity'),__('Total')));
 							?>
 							</thead>
 							<tbody>
@@ -68,27 +72,35 @@
 								<td align="right"><?php echo $item['price']; ?></td>
 								<td align="right"><?php echo $item['quantity']; ?></td>
 								<td align="right"><?php echo $item['total']; ?></td>
-								
-								<td align="center">
-								</td>
 							</tr>
 							<?php endforeach;?>
 							</tbody>
 						</table>
 			  		</div>
 			  	</div>
+			  	<?php if($quotation['Quotation']['status']==PENDING && $quotation['Quotation']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
+			  		<div class="view-contact-box">
+			  		<h3><?php echo __('Confirm with detail'); ?></h3>
+			  		<?php echo $this->Form->create('PurchaseOrder',array('url'=>array('controller'=>'quotation','action'=>'confirm',$quotation['Quotation']['id']),'class'=>'form-horizontal')); ?>
+					<fieldset>
+					<?php echo $this->Form->input('number',array('type'=>'text','label'=>'PO Number','class'=>'input-xlarge','placeholder'=>'leave blank will be auto-generated')); ?>
+					<?php echo $this->Form->input('remark',array('type'=>'textarea','class'=>'input-xlarge')); ?>
+					</fieldset>
+					<?php echo $this->Form->end(); ?>
+					</div>
+			  	<?php endif;?>
 			  	<div class="view-contact-back">
 			  		<?php if(($quotation['Quotation']['status']==PENDING||$quotation['Quotation']['status']==PENDINGADMIN)):?>
 			  			<?php if($quotation['Quotation']['company_id']==$this->Session->read('Auth.User.company_id')):?>
 			  				<?php if(($this->Session->read('Auth.User.group_id')==ADMINISTRATOR||$this->Session->read('Auth.User.group_id')==SUPERADMIN)&&$quotation['Quotation']['status']==PENDINGADMIN):?>
-			  					<?php echo $this->Html->link(__('Approve'),array('controller'=>'quotation','action'=>'approve',$quotation['Quotation']['id']),array('class'=>'btn btn-success'));?>
+			  					<?php echo $this->Html->link(__('Approve'),array('controller'=>'quotation','action'=>'approve',$quotation['Quotation']['id']),array('class'=>'confirm btn btn-success'));?>
 			  				<?php endif;?>
 							<?php echo $this->Html->link(__('Edit'),array('controller'=>'quotation','action'=>'edit',$quotation['Quotation']['id']),array('class'=>'btn btn-primary'));?>
 						<?php elseif($quotation['Quotation']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
 							<?php echo $this->Html->link(__('Confirm'),array('controller'=>'quotation','action'=>'confirm',$quotation['Quotation']['id']),array('class'=>'btn btn-success'));?>
 						<?php endif;?>
 					<?php endif;?>
-					<?php if($quotation['Quotation']['company_id']==$this->Session->read('User.company_id')):?>
+					<?php if($quotation['Quotation']['company_id']==$this->Session->read('Auth.User.company_id')):?>
 						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-inverse'));?>
 					<?php else:?>
 						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index','self'),array('class'=>'btn btn-inverse'));?>

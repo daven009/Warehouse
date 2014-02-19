@@ -163,7 +163,11 @@ class UsersController extends AppController {
 				}
 			}
 		}
-		$grouplist = $this->User->Group->find('list');
+		$conditions = array();
+		if($this->Auth->user('group_id')!=SUPERADMIN){
+			$conditions = array('Group.id <'=>10);
+		}
+		$grouplist = $this->User->Group->find('list',array('conditions'=>$conditions));
 		$this->set('grouplist',$grouplist);
 	}
 	

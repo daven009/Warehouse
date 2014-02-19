@@ -9,6 +9,8 @@ class StatusHelper extends AppHelper{
 				return "<strong class='red'>Pending";
 			case PARTIAL:
 				return "<strong class='yellow'>Partial";
+			case ACCEPTED:
+				return "<strong class='green'>Accepted";
 			case COMPLETED:
 				return "<strong class='green'>Completed";
 			case DELIVERED:

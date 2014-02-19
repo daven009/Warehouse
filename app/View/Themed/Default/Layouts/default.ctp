@@ -93,15 +93,9 @@
 		          				<li><a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'stock','action'=>'add'));?>" ><i class="icon-plus"></i> <?php echo __('Stock In'); ?></a></li>
 		          			</ul>
 		          		</li>
-		          		<li class="dropdown <?php if($this->params['controller']=='deals') echo 'active'; ?>">
-		          		<a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'deals','action'=>'index')); ?>"><span><i class="icon-thumbs-up"></i></span><?php echo __('DEALS'); ?></a>
+		          		<li class="dropdown <?php if($this->params['controller']=='quotation') echo 'active'; ?>">
+		          		<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><span><i class="icon-thumbs-up"></i></span><?php echo __('APPS'); ?></a>
 		          			<ul class="dropdown-menu">
-		          				<li>
-		          					<a href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'deals','action'=>'add'));?>" >
-		          						<i class="icon-plus"></i> <?php echo __('New Deal'); ?>
-		          					</a>
-		          				</li>
-		          				<li class="divider"></li>
 				                <li class="dropdown-submenu">
 				                    <a tabindex="-1" href="#">Quotation</a>
 				                    <ul class="dropdown-menu">
@@ -152,8 +146,8 @@
 						      <li><?php echo $this->Html->link(__('Users'),array('plugin'=>'','controller'=>'users','action'=>'index')); ?></li>
 						      <?php  if (AuthComponent::user('group_id')==SUPERADMIN): ?>
 						      <li><?php echo $this->Html->link(__('Companies'),array('plugin'=>'','controller'=>'company','action'=>'index')); ?></li>
-						      <?php endif;?>
 						      <li><?php echo $this->Html->link(__('Settings'),array('plugin'=>'','controller'=>'options','action'=>'edit')); ?></li>
+						      <?php endif;?>
 						</ul>
 		        	</li>
 		        	<?php endif; ?>

@@ -215,15 +215,19 @@ if (!defined('PENDING')) {
 	define('PENDING', 1);
 }
 
+if (!defined('ACCEPTED')) {
+	define('ACCEPTED', 2);
+}
+
 if (!defined('PARTIAL')) {
-	define('PARTIAL', 2);
+	define('PARTIAL', 3);
 }
 
 if (!defined('COMPLETED')) {
-	define('COMPLETED', 3);
+	define('COMPLETED', 4);
 }
 
 if (!defined('DELIVERED')) {
-	define('DELIVERED', 4);
+	define('DELIVERED', 5);
 }
 

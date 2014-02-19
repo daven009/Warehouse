@@ -1903,3 +1903,92 @@ Stack Trace:
 #3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-02-19 01:41:22 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-19 01:41:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-19 01:41:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-19 01:42:04 Error: [MissingActionException] Action QuotationController::assets() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuotationController',
+  'action' => 'assets',
+)
+Request URL: /quotation/assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-19 01:46:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-19 01:47:39 Error: [SocketException] Invalid email: ""
+Request URL: /users/add
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Network/Email/CakeEmail.php(428): CakeEmail->_setEmail('_to', '', NULL)
+#1 /Users/Guanhao/Documents/Projects/Warehouse/app/Controller/UsersController.php(152): CakeEmail->to('')
+#2 [internal function]: UsersController->add()
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#4 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#5 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#6 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2014-02-19 02:07:50 Error: [MissingActionException] Action QuotationController::approve() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuotationController',
+  'action' => 'approve',
+)
+Request URL: /quotation/approve/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-19 02:08:37 Error: [MissingActionException] Action QuotationController::approve() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuotationController',
+  'action' => 'approve',
+)
+Request URL: /quotation/approve/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(QuotationController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-02-19 02:58:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
