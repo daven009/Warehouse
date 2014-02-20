@@ -21,7 +21,7 @@ class PurchaseOrder extends AppModel {
 			'search_status' => array('type'=>'value','field'=>array('PurchaseOrder.status')),
 			'search_company_id' => array('type'=>'value','field'=>array('PurchaseOrder.company_id')),
 			'search_number' => array('type'=>'like','field'=>array('PurchaseOrder.number')),
-			'search_customer_id' => array('type'=>'value','field'=>array('PurchaseOrder.customer_id')),
+			'search_supplier_id' => array('type'=>'value','field'=>array('PurchaseOrder.supplier_id')),
 			'search_company_name' => array('type'=>'like','field'=>array('Supplier.name')),
 			'search_date_from' => array('type'=>'expression','method'=>'searchDate','field'=>'PurchaseOrder.date BETWEEN ? AND ?'),
 			'search_all' => array('type'=>'query','method'=>'searchDefault')

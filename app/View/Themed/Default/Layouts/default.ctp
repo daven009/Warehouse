@@ -112,7 +112,7 @@
 				                    <a tabindex="-1" href="#">Purchase Order</a>
 				                    <ul class="dropdown-menu">
 				                      <?php if($CompanyRole==SUPPLIER||$CompanyRole==DEALER):?>
-				                      <li><a tabindex="-1" href="#">From Customer</a></li>
+				                      <li><a tabindex="-1" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'purchase_order','action'=>'index','self'));?>">From Customer</a></li>
 				                      <?php endif;?>
 				                      <?php if($CompanyRole==DEALER||$CompanyRole==DISTRIBUTOR):?>
 				                      <li><a tabindex="-1" href="#">To Supplier</a></li>
