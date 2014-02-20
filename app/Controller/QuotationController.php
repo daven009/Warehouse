@@ -1,6 +1,6 @@
 <?php
 class QuotationController extends AppController {
-	public $uses = array('Quotation','Good');
+	public $uses = array('Quotation','Good','PurchaseOrder');
 	
 	public $components = array('RequestHandler');
 	
@@ -29,7 +29,6 @@ class QuotationController extends AppController {
 				break;
 			case "self":
 				$this->passedArgs['search_customer_id'] = $this->Auth->user('company_id');
-				$this->passedArgs['search_status'] = !NULL;
 				break;
 		}
 		
@@ -135,6 +134,35 @@ class QuotationController extends AppController {
 				$this->Session->setFlash(__('Quotation approved'),'alert');
 			}else{
 				$this->Session->setFlash(__('Unable to approved'),'alert', array('class'=>'alert-error'));
+			}
+		}else{
+			$this->Session->setFlash(__('Unable to retrieve'),'alert', array('class'=>'alert-error'));
+		}
+		
+		$this->redirect($this->referer());
+	}
+	
+	public function confirm($id){
+		if(is_null($id)){
+			$this->Session->setFlash(__('Unable to retrieve'),'alert', array('class'=>'alert-error'));
+			$this->redirect($this->referer());
+		}
+		
+		$quotation = $this->Quotation->find('first',array('conditions'=>array('Quotation.id'=>$id,'Quotation.customer_id'=>$this->Auth->user('company_id'))));
+		
+		if($quotation){
+			$number = $this->request->data['PurchaseOrder']['number'];
+			$this->request->data['PurchaseOrder']['quotation_id'] = $id;
+			$this->request->data['PurchaseOrder']['supplier_id'] = $quotation['Quotation']['company_id'];
+			$this->request->data['PurchaseOrder']['company_id'] = $quotation['Quotation']['customer_id'];
+			$this->request->data['PurchaseOrder']['items'] = $quotation['Quotation']['items'];
+			$this->request->data['PurchaseOrder']['order_date'] = $quotation['Quotation']['order_date'];
+			$this->request->data['PurchaseOrder']['amount'] = $quotation['Quotation']['amount'];
+			$this->PurchaseOrder->create();
+			if($this->PurchaseOrder->save($this->request->data)){
+				$this->Quotation->id = $id;
+				$this->Quotation->saveField('status',ACCEPTED);
+				$this->Session->setFlash(__('Quotation confirmed, PO has been issued'),'alert');
 			}
 		}else{
 			$this->Session->setFlash(__('Unable to retrieve'),'alert', array('class'=>'alert-error'));

@@ -81,7 +81,7 @@
 			  	<?php if($quotation['Quotation']['status']==PENDING && $quotation['Quotation']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
 			  		<div class="view-contact-box">
 			  		<h3><?php echo __('Confirm with detail'); ?></h3>
-			  		<?php echo $this->Form->create('PurchaseOrder',array('url'=>array('controller'=>'quotation','action'=>'confirm',$quotation['Quotation']['id']),'class'=>'form-horizontal')); ?>
+			  		<?php echo $this->Form->create('PurchaseOrder',array('url'=>array('controller'=>'quotation','action'=>'confirm',$quotation['Quotation']['id']),'id'=>'PurchaseOrderForm','class'=>'form-horizontal')); ?>
 					<fieldset>
 					<?php echo $this->Form->input('number',array('type'=>'text','label'=>'PO Number','class'=>'input-xlarge','placeholder'=>'leave blank will be auto-generated')); ?>
 					<?php echo $this->Form->input('remark',array('type'=>'textarea','class'=>'input-xlarge')); ?>
@@ -97,7 +97,7 @@
 			  				<?php endif;?>
 							<?php echo $this->Html->link(__('Edit'),array('controller'=>'quotation','action'=>'edit',$quotation['Quotation']['id']),array('class'=>'btn btn-primary'));?>
 						<?php elseif($quotation['Quotation']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
-							<?php echo $this->Html->link(__('Confirm'),array('controller'=>'quotation','action'=>'confirm',$quotation['Quotation']['id']),array('class'=>'btn btn-success'));?>
+							<?php echo $this->Html->link(__('Confirm'),'javascript:;',array('onclick'=>"$('#PurchaseOrderForm').submit()",'class'=>'btn btn-success'));?>
 						<?php endif;?>
 					<?php endif;?>
 					<?php if($quotation['Quotation']['company_id']==$this->Session->read('Auth.User.company_id')):?>

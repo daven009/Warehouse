@@ -1992,3 +1992,22 @@ Request URL: /css/jqplot/jquery.jqplot.min.css
 Stack Trace:
 #0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-02-19 09:33:08 Error: Fatal Error (1): Call to a member function create() on a non-object in [/Users/Guanhao/Documents/Projects/Warehouse/app/Controller/QuotationController.php, line 162]
+2014-02-19 09:33:08 Error: [FatalErrorException] Call to a member function create() on a non-object
+Request URL: /quotation/confirm/1
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Error/ErrorHandler.php(179): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Users/Guanhao/...', 162)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Users/Guanhao/...', 162, Array)
+#2 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Users/Guanhao/...', 162, Array)
+#3 /Users/Guanhao/Documents/Projects/Warehouse/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-19 13:19:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/jqplot/jquery.jqplot.min.css
+Stack Trace:
+#0 /Users/Guanhao/Documents/Projects/Warehouse/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

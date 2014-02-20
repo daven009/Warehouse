@@ -1,13 +1,13 @@
 <?php
-class Quotation extends AppModel {
+class PurchaseOrder extends AppModel {
 // 	protected $dates = array('date','collection_date');
 // 	protected $datetimes = array('start_date','end_date');
 	protected $jsons = array('items');
 	
 	public $belongsTo = array(
-			'Customer'=>array(
+			'Supplier'=>array(
 					'className'=>'Company',
-					'foreignKey'=>'customer_id',
+					'foreignKey'=>'supplier_id',
 					),
 			'Company'=>array(
 					'className' => 'Company',
@@ -18,12 +18,12 @@ class Quotation extends AppModel {
 	public $actsAs = array('Search.Searchable');
 	
 	public $filterArgs = array(
-			'search_status' => array('type'=>'value','field'=>array('Quotation.status')),
-			'search_company_id' => array('type'=>'value','field'=>array('Quotation.company_id')),
-			'search_number' => array('type'=>'like','field'=>array('Quotation.number')),
-			'search_customer_id' => array('type'=>'value','field'=>array('Quotation.customer_id')),
-			'search_company_name' => array('type'=>'like','field'=>array('Customer.name')),
-			'search_date_from' => array('type'=>'expression','method'=>'searchDate','field'=>'Quotation.date BETWEEN ? AND ?'),
+			'search_status' => array('type'=>'value','field'=>array('PurchaseOrder.status')),
+			'search_company_id' => array('type'=>'value','field'=>array('PurchaseOrder.company_id')),
+			'search_number' => array('type'=>'like','field'=>array('PurchaseOrder.number')),
+			'search_customer_id' => array('type'=>'value','field'=>array('PurchaseOrder.customer_id')),
+			'search_company_name' => array('type'=>'like','field'=>array('Supplier.name')),
+			'search_date_from' => array('type'=>'expression','method'=>'searchDate','field'=>'PurchaseOrder.date BETWEEN ? AND ?'),
 			'search_all' => array('type'=>'query','method'=>'searchDefault')
 	);
 	
@@ -31,7 +31,7 @@ class Quotation extends AppModel {
 		$filter = $data['search_all'];
 		$cond = array(
 				'OR' => array(
-						'Customer.name LIKE' => '%' . $filter . '%',
+						'Supplier.name LIKE' => '%' . $filter . '%',
 				));
 		return $cond;
 	}
