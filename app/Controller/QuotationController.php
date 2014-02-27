@@ -115,6 +115,15 @@ class QuotationController extends AppController {
 		}
 		$extra_msg = '';
 		if(!empty($this->request->data)){
+			$amount = 0;
+			$records = array();
+			foreach ($this->request->data['Quotation']['items'] as $item){
+				$amount += $item['total'];
+				$records[] = $item;
+			}
+			$this->request->data['Quotation']['items'] = $records;
+			$this->request->data['Quotation']['amount'] = $amount;
+			
 			if($this->Quotation->save($this->request->data)){
 				$this->Session->setFlash(__('Quotation data saved'),'alert');
 				$this->redirect(array('action'=>'view',$id));
@@ -187,6 +196,16 @@ class QuotationController extends AppController {
 		
 		if($quotation){
 			$number = $this->request->data['PurchaseOrder']['number'];
+			if($number==""){
+				$order = 0;
+				do {
+					$order+=1;
+					$order_number = 'Q'.date('y').date('m').sprintf('%04d',$order);
+					$exist = $this->PurchaseOrder->find('first',array('recursive'=>-1,'conditions'=>array('PurchaseOrder.number'=>$order_number)));
+				} while ($exist);
+					
+				$this->request->data['PurchaseOrder']['number'] = $order_number;
+			}
 			$this->request->data['PurchaseOrder']['quotation_id'] = $id;
 			$this->request->data['PurchaseOrder']['supplier_id'] = $quotation['Quotation']['company_id'];
 			$this->request->data['PurchaseOrder']['company_id'] = $quotation['Quotation']['customer_id'];

@@ -181,5 +181,21 @@ class AppController extends Controller {
 		
 		return $company_list;
 	}
+	
+	function supplier_list(){
+		$this->loadModel('Company');
+		switch ($this->_CompanyRole){
+			case DISTRIBUTOR:
+				$company_list = $this->Company->find('list',array('conditions'=>array('Company.company_group_id'=>DEALER)));
+				break;
+			case DEALER:
+				$company_list = $this->Company->find('list',array('conditions'=>array('Company.company_group_id'=>SUPPLIER)));
+				break;
+			default:
+				return false;
+		}
+		
+		return $company_list;
+	}
 		
 }

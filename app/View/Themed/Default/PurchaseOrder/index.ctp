@@ -2,7 +2,7 @@
 	<div>
 		<h3><?php echo __('Purchase Orders'); ?>
 		<?php if(!in_array('self',$this->params['pass'])):?>
-		<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'quotation','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New'); ?></a>
+		<a class="btn btn-success btn-mini" href="<?php echo $this->Html->url(array('controller'=>'purchase_order','action'=>'add')); ?>"><i class="icon-plus"></i> <?php echo __('New'); ?></a>
 		<?php endif?>
 		<?php echo $this->Form->create('PurchaseOrder', array('url' => array_merge(array('action' => 'index'), $this->params['pass']),'class'=>'navbar-search pull-right')); ?>
 	  		<div class="input-append">

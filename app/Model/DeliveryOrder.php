@@ -1,13 +1,13 @@
 <?php
-class PurchaseOrder extends AppModel {
+class DeliveryOrder extends AppModel {
 	protected $dates = array('order_date');
 // 	protected $datetimes = array('start_date','end_date');
 	protected $jsons = array('items');
 	
 	public $belongsTo = array(
-			'Supplier'=>array(
+			'Customer'=>array(
 					'className'=>'Company',
-					'foreignKey'=>'supplier_id',
+					'foreignKey'=>'customer_id',
 					),
 			'Company'=>array(
 					'className' => 'Company',
@@ -18,12 +18,12 @@ class PurchaseOrder extends AppModel {
 	public $actsAs = array('Search.Searchable');
 	
 	public $filterArgs = array(
-			'search_status' => array('type'=>'value','field'=>array('PurchaseOrder.status')),
-			'search_company_id' => array('type'=>'value','field'=>array('PurchaseOrder.company_id')),
-			'search_number' => array('type'=>'like','field'=>array('PurchaseOrder.number')),
-			'search_supplier_id' => array('type'=>'value','field'=>array('PurchaseOrder.supplier_id')),
-			'search_company_name' => array('type'=>'like','field'=>array('Supplier.name')),
-			'search_date_from' => array('type'=>'expression','method'=>'searchDate','field'=>'PurchaseOrder.date BETWEEN ? AND ?'),
+			'search_status' => array('type'=>'value','field'=>array('DeliveryOrder.status')),
+			'search_company_id' => array('type'=>'value','field'=>array('DeliveryOrder.company_id')),
+			'search_number' => array('type'=>'like','field'=>array('DeliveryOrder.number')),
+			'search_customer_id' => array('type'=>'value','field'=>array('DeliveryOrder.supplier_id')),
+			'search_company_name' => array('type'=>'like','field'=>array('Customer.name')),
+			'search_date_from' => array('type'=>'expression','method'=>'searchDate','field'=>'DeliveryOrder.date BETWEEN ? AND ?'),
 			'search_all' => array('type'=>'query','method'=>'searchDefault')
 	);
 	
@@ -31,7 +31,7 @@ class PurchaseOrder extends AppModel {
 		$filter = $data['search_all'];
 		$cond = array(
 				'OR' => array(
-						'Supplier.name LIKE' => '%' . $filter . '%',
+						'Customer.name LIKE' => '%' . $filter . '%',
 				));
 		return $cond;
 	}

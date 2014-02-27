@@ -75,7 +75,11 @@
 			  	
 			  	<div class="view-contact-back">
 			  	<?php echo $this->Html->link(__('Save'),'javascript:;',array('onclick'=>'$("form").submit()','class'=>'btn btn-primary'));?>		
-				<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-inverse'));?>
+			  	<?php if(isset($this->data['PurchaseOrder']['id'])):?>
+					<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'view',$this->data['Quotation']['id']),array('class'=>'btn btn-inverse'));?>
+				<?php else:?>
+					<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-inverse'));?>
+				<?php endif;?>
 				</div>
 			</div>
 		</div>

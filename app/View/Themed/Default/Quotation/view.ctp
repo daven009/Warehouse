@@ -37,7 +37,7 @@
 						</tr>
 						<tr>
 							<td><?php echo __('Remark:'); ?></td>
-							<td><?php $quotation['Quotation']['remark']?></td>
+							<td><?php echo $quotation['Quotation']['remark']?></td>
 						</tr>
 						<tr>
 							<td><?php echo __('Created:'); ?></td>
