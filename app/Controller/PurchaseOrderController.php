@@ -54,7 +54,7 @@ class PurchaseOrderController extends AppController {
 		}
 		
 		
-		$this->set('quotation',$this->PurchaseOrder->read());
+		$this->set('purchase',$this->PurchaseOrder->read());
 		$this->set('goods',$this->Good->find('list'));
 		
 	}
