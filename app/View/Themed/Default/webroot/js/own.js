@@ -41,6 +41,10 @@ function fixRow(clone,i){
 }
 
 $(document).ready(function(){
+	$('body').on('click','.removerow',function(){
+		$(this).parents('tr').remove();
+	})
+	
 	$('body').on('keyup','.quantity',function(){
 		var quantity = parseFloat($(this).val());
 		if(typeof quantity!="NaN"){

@@ -46,7 +46,7 @@
 								<?php if(@$this->data['Quotation']['items']):?>
 									<?php foreach($this->data['Quotation']['items'] as $k=>$item):?>
 									<tr class="native-record">
-										<td><span class="removerow"><i class="icon-remove"></i></span></td>
+										<td><span class="removerow" style="cursor: pointer"><i class="icon-remove"></i></span></td>
 										<td data-modal-title="<?php echo __('Add Item')?>" data-modal-href="<?php echo Router::url(array('controller'=>'Quotation','action'=>'addPart'))?>" class="native-row">
 											<?php echo $this->Form->input("Quotation.items.$k.id",array('type'=>'hidden','class'=>'span12 m-wrap part_id'))?>
 											<span class="text"><?php echo $goods[$item['id']]?></span>
@@ -85,7 +85,7 @@
 	<table id="templatetr_part" style="display:none">
 	<?php $k = 0;?>
 	<tr class="native-record">
-		<td><span class="removerow"><i class="icon-remove"></i></span></td>
+		<td><span class="removerow" style="cursor: pointer"><i class="icon-remove"></i></span></td>
 		<td data-modal-title="<?php echo __('Add Item')?>" data-modal-href="<?php echo Router::url(array('controller'=>'Quotation','action'=>'addPart'))?>" class="native-row">
 			<?php echo $this->Form->input("Quotation.items.$k.id",array('type'=>'hidden','class'=>'span12 m-wrap part_id'))?>
 			<span class="part_name text"></span>
