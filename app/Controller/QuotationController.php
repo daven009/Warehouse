@@ -108,15 +108,16 @@ class QuotationController extends AppController {
 	}
 	
 	public function edit($id = null){
-		$this->Company->id = $id;
-		if(!$this->Company->exists()){
+		$this->view = 'add';
+		$this->Quotation->id = $id;
+		if(!$this->Quotation->exists()){
 			throw new NotFoundException(__('Record not found'));
 		}
 		$extra_msg = '';
-		if($this->request->is('post')){
-			if($this->Company->save($this->request->data)){
-				$this->Session->setFlash(__('Company data saved'),'alert');
-				$this->redirect(array('action'=>'index'));
+		if(!empty($this->request->data)){
+			if($this->Quotation->save($this->request->data)){
+				$this->Session->setFlash(__('Quotation data saved'),'alert');
+				$this->redirect(array('action'=>'view',$id));
 			}
 			else
 			{
@@ -125,9 +126,11 @@ class QuotationController extends AppController {
 		}
 		else
 		{
-			$companygroups = $this->CompanyGroup->find('list');
-			$this->set(compact('companygroups'));
-			$this->request->data = $this->Company->read();
+			$customers = $this->customer_list();
+			$this->set(compact('customers'));
+			$goods = $this->Good->find('list');
+			$this->set(compact('goods'));
+			$this->data = $this->Quotation->read();
 		}
 	}
 	

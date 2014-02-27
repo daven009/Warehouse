@@ -43,7 +43,21 @@
 							?>
 							</thead>
 							<tbody id="record-tbody">
-								
+								<?php if(@$this->data['Quotation']['items']):?>
+									<?php foreach($this->data['Quotation']['items'] as $k=>$item):?>
+									<tr class="native-record">
+										<td><span class="removerow"><i class="icon-remove"></i></span></td>
+										<td data-modal-title="<?php echo __('Add Item')?>" data-modal-href="<?php echo Router::url(array('controller'=>'Quotation','action'=>'addPart'))?>" class="native-row">
+											<?php echo $this->Form->input("Quotation.items.$k.id",array('type'=>'hidden','class'=>'span12 m-wrap part_id'))?>
+											<span class="text"><?php echo $goods[$item['id']]?></span>
+										</td>
+										<td><?php echo $this->Form->input("Quotation.items.$k.description",array('class'=>'span12 m-wrap description'))?></td>
+										<td class="control-group controls"><?php echo $this->Form->input("Quotation.items.$k.price",array('class'=>'right_align span12 m-wrap number price'))?></td>
+										<td class="control-group controls"><?php echo $this->Form->input("Quotation.items.$k.quantity",array('class'=>'right_align span12 m-wrap number quantity'))?></td>
+										<td class="control-group controls"><?php echo $this->Form->input("Quotation.items.$k.total",array('class'=>'right_align span12 m-wrap number totalprice'))?></td>
+									</tr>
+									<?php endforeach;?>
+								<?php endif;?>
 							</tbody>
 							<tfoot>
 								<tr>
@@ -88,8 +102,12 @@
 $(document).ready(function(){
 	$(".date").datepicker({ dateFormat: "dd/mm/yy" });
 })
-							
+
+<?php if(@$this->data['Quotation']['items']):?>
+var i = <?php echo count($this->data['Quotation']['items'])?>;
+<?php else:?>
 var i = 0;
+<?php endif;?>
 function add(){
 	var cl = $("#templatetr_part tr").clone();
 	cl = fixRow(cl,i);
