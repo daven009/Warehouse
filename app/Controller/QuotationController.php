@@ -62,7 +62,39 @@ class QuotationController extends AppController {
 	public function add(){
 		$customers = $this->customer_list();
 		$this->set(compact('customers'));
+		$goods = $this->Good->find('list');
+		$this->set(compact('goods'));
 		if(!empty($this->request->data)){
+			$date = $this->request->data['Quotation']['order_date'];
+			$year = DateTime::createFromFormat('d/m/Y', $date)->format('y');
+			$month = DateTime::createFromFormat('d/m/Y', $date)->format('m');
+			//-------------------------------------------
+			$conditions = array(
+					'Quotation.order_date >='=>DateTime::createFromFormat('d/m/Y', $date)->format('Y-m-'."01"),
+					'Quotation.order_date <='=>DateTime::createFromFormat('d/m/Y', $date)->format('Y-m-t')
+			);
+			$order = $this->Quotation->find('count',array('conditions'=>$conditions));
+			
+			do {
+				$order+=1;
+				$order_number = 'Q'.$year.$month.sprintf('%04d',$order);
+				$exist = $this->Quotation->find('first',array('recursive'=>-1,'conditions'=>array('Quotation.number'=>$order_number)));
+			} while ($exist);
+			
+			$this->request->data['Quotation']['number'] = $order_number;
+			$this->request->data['Quotation']['company_id'] = $this->Auth->user('company_id');
+			//-------------------------------------------
+			$amount = 0;
+			$records = array();
+			foreach ($this->request->data['Quotation']['items'] as $item){
+				$amount += $item['total'];
+				$records[] = $item;
+			}
+			$this->request->data['Quotation']['items'] = $records;
+			$this->request->data['Quotation']['amount'] = $amount;
+// 			var_dump($this->request->data);exit;
+			
+			
 			$this->Quotation->create();
 			if($this->Quotation->save($this->request->data)){
 				$this->Session->setFlash(__('New quotation added'),'alert'); //print_r($this->request->data); exit;

@@ -36,17 +36,17 @@ class AppModel extends Model {
 	protected $jsons = array();
 	
 	public function beforeSave($options = array()) {
-// 		foreach($this->dates as $date){
-// 			if(isset($this->data[$this->alias][$date]) && !empty($this->data[$this->alias][$date])){
-// 				$testdate = DateTime::createFromFormat(VIEWDATEFORMATPHP, $this->data[$this->alias][$date]);
+		foreach($this->dates as $date){
+			if(isset($this->data[$this->alias][$date]) && !empty($this->data[$this->alias][$date])){
+				$testdate = DateTime::createFromFormat(VIEWDATEFORMATPHP, $this->data[$this->alias][$date]);
 	
-// 				if($testdate){
-// 					$this->data[$this->alias][$date] = $testdate->format(DBDATEFORMATPHP);
-// 				}else{
-// 					unset($this->data[$this->alias][$date]);
-// 				}
-// 			}
-// 		}
+				if($testdate){
+					$this->data[$this->alias][$date] = $testdate->format(DBDATEFORMATPHP);
+				}else{
+					unset($this->data[$this->alias][$date]);
+				}
+			}
+		}
 			
 // 		foreach($this->datetimes as $datetime){
 // 			if(isset($this->data[$this->alias][$datetime]) && !empty($this->data[$this->alias][$datetime])){
@@ -76,12 +76,12 @@ class AppModel extends Model {
 		foreach($results as $k => $result){
 	
 			if(isset($result[$this->alias])){
-// 				foreach($this->dates as $date){
-// 					if(isset($result[$this->alias][$date]) && !empty($result[$this->alias][$date])){
-// 						$testdate = DateTime::createFromFormat(DBDATEFORMATPHP, $result[$this->alias][$date]);
-// 						$result[$this->alias][$date] = $testdate->format(VIEWDATEFORMATPHP);
-// 					}
-// 				}
+				foreach($this->dates as $date){
+					if(isset($result[$this->alias][$date]) && !empty($result[$this->alias][$date])){
+						$testdate = DateTime::createFromFormat(DBDATEFORMATPHP, $result[$this->alias][$date]);
+						$result[$this->alias][$date] = $testdate->format(VIEWDATEFORMATPHP);
+					}
+				}
 	
 // 				foreach($this->datetimes as $datetime){
 // 					if(isset($result[$this->alias][$datetime]) && !empty($result[$this->alias][$datetime])){

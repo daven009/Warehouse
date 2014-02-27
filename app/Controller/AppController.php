@@ -33,6 +33,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	private $_CompanyRole = false;
+	private $_CompanyName = false;
 	
 	public $theme = 'Default';
 	
@@ -125,8 +126,10 @@ class AppController extends Controller {
 			$this->loadModel('Company');
 			$company_id = $this->Auth->user('company_id');
 			$company = $this->Company->find('first',array('recursive'=>-1,'conditions'=>array('Company.id'=>$company_id)));
+			$this->_CompanyName = $company['Company']['name'];
 			$this->_CompanyRole = $company['Company']['company_group_id'];
 		}
+		$this->set('CompanyName',$this->_CompanyName);
 		$this->set('CompanyRole',$this->_CompanyRole);
 	}
 	

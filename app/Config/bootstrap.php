@@ -231,3 +231,48 @@ if (!defined('DELIVERED')) {
 	define('DELIVERED', 5);
 }
 
+//DB Date format
+if(!defined('DBDATEFORMATPHP')){
+	define('DBDATEFORMATPHP','Y-m-d');
+}
+//DB DateTime format
+if(!defined('DBDATETIMEFORMATPHP')){
+	define('DBDATETIMEFORMATPHP','Y-m-d H:i:s');
+}
+//View Date format js
+if(!defined('VIEWDATEFORMATJS')){
+	define('VIEWDATEFORMATJS','dd/mm/yyyy');
+}
+
+//View Date format js2 parse use
+if(!defined('VIEWDATEFORMATJS2')){
+	define('VIEWDATEFORMATJS2','dd/mm/yy');
+}
+//View Date format datejs
+if(!defined('VIEWDATEFORMATDATEJS')){
+	define('VIEWDATEFORMATDATEJS','dd/MM/yyyy');
+}
+//View Datetime format datejs
+if(!defined('VIEWDATETIMEFORMATDATEJS')){
+	define('VIEWDATETIMEFORMATDATEJS','dd/MM/yyyy HH:mm');
+}
+//View Date format datejs
+if(!defined('VIEWDATERANGEJS')){
+	define('VIEWDATERANGEJS','MMMM d, yyyy');
+}
+//View pretty format
+if(!defined('VIEWDATEPRETTYPHP')){
+	define('VIEWDATEPRETTYPHP','d M Y');
+}
+//View Date format php
+if(!defined('VIEWDATEFORMATPHP')){
+	define('VIEWDATEFORMATPHP','d/m/Y');
+}
+//View Datetime format php
+if(!defined('VIEWDATETIMEFORMATPHP')){
+	define('VIEWDATETIMEFORMATPHP','d/m/Y H:i');
+}
+//View Datetime format js
+if(!defined('VIEWDATETIMEFORMATJS')){
+	define('VIEWDATETIMEFORMATJS','dd/mm/yyyy hh:ii');
+}

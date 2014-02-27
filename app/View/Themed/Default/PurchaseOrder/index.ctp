@@ -97,7 +97,7 @@ jQuery(function($) {
 	$("#more").click(function(){
 		$(".filter-box").toggle('fold');
 	});
-	$(".date").datepicker({ dateFormat: 'yy-mm-dd' });
+	$(".date").datepicker({ dateFormat: "dd/mm/yy" });
 	$('#filter-result-close').click(function(){
 		window.location.href = "<?php echo $this->Html->url(array_merge(array('controller'=>'quotation','action' => 'index'), $this->params['pass'])); ?>";
 	});

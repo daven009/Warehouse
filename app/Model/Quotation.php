@@ -1,6 +1,6 @@
 <?php
 class Quotation extends AppModel {
-// 	protected $dates = array('date','collection_date');
+	protected $dates = array('order_date');
 // 	protected $datetimes = array('start_date','end_date');
 	protected $jsons = array('items');
 	

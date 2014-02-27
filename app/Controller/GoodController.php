@@ -95,4 +95,10 @@ class GoodController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 	}
+	
+	public function find($id){
+		$good = $this->Good->findById($id);
+		echo json_encode($good['Good']);
+		exit;
+	}
 }

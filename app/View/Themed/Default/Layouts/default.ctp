@@ -24,6 +24,7 @@
 		echo $this->Html->script('jquery.validate.min');
 		echo $this->Html->script('jquery-ui-1.9.2.custom.min');
 		echo $this->Html->script('jquery-ui-timepicker-addon');
+		echo $this->Html->script('own');
 		
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

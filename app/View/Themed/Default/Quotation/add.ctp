@@ -1,4 +1,5 @@
 <div>
+	<?php echo $this->Form->create('Quotation',array('inputDefaults'=>array('label'=>false,'div'=>false))); ?>
 	<div class="row-fluid">
 		<div class="span5 view-contact-box">
 			<h3><?php echo __('Quotation Details'); ?></h3>
@@ -8,44 +9,21 @@
 						<thead>
 						<tr>
 							<th><?php echo __('Number:'); ?></th>
-							<th><?php echo $quotation['Quotation']['number']?></th>
+							<th>Auto-generate</th>
 						</tr>
 						</thead>
 						<tr>
 							<td><?php echo __('Customer:'); ?></td>
-							<td><?php echo $quotation['Customer']['name']?></td>
+							<td><?php echo $this->Form->input('customer_id',array('data'=>$customers,'type'=>'select'))?></td>
 						</tr>
 						<tr>
-							<td><?php echo __('Supplier:')?></td>
-							<td><?php echo $quotation['Company']['name']?></td>
+							<td><?php echo __('Order Date:'); ?></td>
+							<td><?php echo $this->Form->input('order_date',array('type'=>'text','class'=>'date'))?></td>
 						</tr>
-						<tr>
-							<td><?php echo __('Address:')?></td>
-							<td><?php echo $quotation['Customer']['address']?></td>
-						</tr>
-						<tr>
-							<td><?php echo __('Postal:'); ?></td>
-							<td><?php echo $quotation['Customer']['postal_code']?></td>
-						</tr>
-						<tr>
-							<td><?php echo __('Amount:'); ?></td>
-							<td><?php echo $quotation['Quotation']['amount']?></td>
-						</tr>
-						<tr>
-							<td><?php echo __('Status:'); ?></td>
-							<td><?php echo $this->Status->format($quotation['Quotation']['status'])?></td>
-						</tr>
+						
 						<tr>
 							<td><?php echo __('Remark:'); ?></td>
-							<td><?php $quotation['Quotation']['remark']?></td>
-						</tr>
-						<tr>
-							<td><?php echo __('Created:'); ?></td>
-							<td><?php echo $quotation['Quotation']['created']?></td>
-						</tr>
-						<tr>
-							<td><?php echo __('Modified:'); ?></td>
-							<td><?php echo $quotation['Quotation']['modified']?></td>
+							<td><?php echo $this->Form->input('remark')?></td>
 						</tr>
 					</table>
 				</div>
@@ -61,53 +39,74 @@
 			  			<table class="table table-bordered table-hover table-striped table-striped-success">
 							<thead class="success">
 							<?php
-								echo $this->Html->tableHeaders(array(__('Name'), __('Description'),__('Price'),__('Quantity'),__('Total')));
+								echo $this->Html->tableHeaders(array('',__('Name'), __('Description'),__('Price'),__('Quantity'),__('Total')));
 							?>
 							</thead>
-							<tbody>
-							<?php foreach ($quotation['Quotation']['items'] as $item):?>
-							<tr>
-								<td><?php echo $goods[$item['id']]?></td>
-								<td><?php echo $item['description']; ?></td>
-								<td align="right"><?php echo $item['price']; ?></td>
-								<td align="right"><?php echo $item['quantity']; ?></td>
-								<td align="right"><?php echo $item['total']; ?></td>
-							</tr>
-							<?php endforeach;?>
+							<tbody id="record-tbody">
+								
 							</tbody>
+							<tfoot>
+								<tr>
+									<td width="30"></td>
+									<td style="vertical-align:middle"><?php echo $this->Form->select('items_id',$goods,array('type'=>'select'))?></td>
+									<td><?php echo $this->Html->link(__('Add'),'javascript:;',array('onclick'=>'add()','class'=>'btn btn-success'));?></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tfoot>
 						</table>
 			  		</div>
 			  	</div>
-			  	<?php if($quotation['Quotation']['status']==PENDING && $quotation['Quotation']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
-			  		<div class="view-contact-box">
-			  		<h3><?php echo __('Confirm with detail'); ?></h3>
-			  		<?php echo $this->Form->create('PurchaseOrder',array('url'=>array('controller'=>'quotation','action'=>'confirm',$quotation['Quotation']['id']),'id'=>'PurchaseOrderForm','class'=>'form-horizontal')); ?>
-					<fieldset>
-					<?php echo $this->Form->input('number',array('type'=>'text','label'=>'PO Number','class'=>'input-xlarge','placeholder'=>'leave blank will be auto-generated')); ?>
-					<?php echo $this->Form->input('remark',array('type'=>'textarea','class'=>'input-xlarge')); ?>
-					</fieldset>
-					<?php echo $this->Form->end(); ?>
-					</div>
-			  	<?php endif;?>
+			  	
 			  	<div class="view-contact-back">
-			  		<?php if(($quotation['Quotation']['status']==PENDING||$quotation['Quotation']['status']==PENDINGADMIN)):?>
-			  			<?php if($quotation['Quotation']['company_id']==$this->Session->read('Auth.User.company_id')):?>
-			  				<?php if(($this->Session->read('Auth.User.group_id')==ADMINISTRATOR||$this->Session->read('Auth.User.group_id')==SUPERADMIN)&&$quotation['Quotation']['status']==PENDINGADMIN):?>
-			  					<?php echo $this->Html->link(__('Approve'),array('controller'=>'quotation','action'=>'approve',$quotation['Quotation']['id']),array('class'=>'confirm btn btn-success'));?>
-			  				<?php endif;?>
-							<?php echo $this->Html->link(__('Edit'),array('controller'=>'quotation','action'=>'edit',$quotation['Quotation']['id']),array('class'=>'btn btn-primary'));?>
-						<?php elseif($quotation['Quotation']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
-							<?php echo $this->Html->link(__('Confirm'),'javascript:;',array('onclick'=>"$('#PurchaseOrderForm').submit()",'class'=>'btn btn-success'));?>
-						<?php endif;?>
-					<?php endif;?>
-					<?php if($quotation['Quotation']['company_id']==$this->Session->read('Auth.User.company_id')):?>
-						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-inverse'));?>
-					<?php else:?>
-						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index','self'),array('class'=>'btn btn-inverse'));?>
-					<?php endif;?>
+			  	<?php echo $this->Html->link(__('Save'),'javascript:;',array('onclick'=>'$("form").submit()','class'=>'btn btn-primary'));?>		
+				<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-inverse'));?>
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php echo $this->Form->end()?>
 	
+	<table id="templatetr_part" style="display:none">
+	<?php $k = 0;?>
+	<tr class="native-record">
+		<td><span class="removerow"><i class="icon-remove"></i></span></td>
+		<td data-modal-title="<?php echo __('Add Item')?>" data-modal-href="<?php echo Router::url(array('controller'=>'Quotation','action'=>'addPart'))?>" class="native-row">
+			<?php echo $this->Form->input("Quotation.items.$k.id",array('type'=>'hidden','class'=>'span12 m-wrap part_id'))?>
+			<span class="part_name text"></span>
+		</td>
+		<td><?php echo $this->Form->input("Quotation.items.$k.description",array('class'=>'span12 m-wrap description'))?></td>
+		<td class="control-group controls"><?php echo $this->Form->input("Quotation.items.$k.price",array('class'=>'right_align span12 m-wrap number price'))?></td>
+		<td class="control-group controls"><?php echo $this->Form->input("Quotation.items.$k.quantity",array('class'=>'right_align span12 m-wrap number quantity'))?></td>
+		<td class="control-group controls"><?php echo $this->Form->input("Quotation.items.$k.total",array('class'=>'right_align span12 m-wrap number totalprice'))?></td>
+	</tr>
+	</table>
 </div>
+
+<script>
+$(document).ready(function(){
+	$(".date").datepicker({ dateFormat: "dd/mm/yy" });
+})
+							
+var i = 0;
+function add(){
+	var cl = $("#templatetr_part tr").clone();
+	cl = fixRow(cl,i);
+
+	var url = "<?php echo Router::url(array('controller'=>'Good','action'=>'find'))?>/"+$('#QuotationItemsId').val();
+	 $.ajax({
+		 url:url,
+		 type:'get',
+		 dataType:'json'
+	 }).done(function(data){
+		 $('#record-tbody').append(cl);
+			cl.find(".part_id").val(data.id);
+			cl.find(".part_name").html(data.name);
+			cl.find(".price").attr("value",data.sales_price);
+			cl.find(".description").val(data.description);
+
+			i++;
+	 });
+}
+</script>
