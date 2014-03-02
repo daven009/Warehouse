@@ -120,6 +120,18 @@
 				                      <?php endif;?>
 				                    </ul>
 				                </li>
+				                <li class="divider"></li>
+				                <li class="dropdown-submenu">
+				                    <a tabindex="-1" href="#">Delivery Order</a>
+				                    <ul class="dropdown-menu">
+				                   	  <?php if($CompanyRole==SUPPLIER||$CompanyRole==DEALER):?>
+				                      <li><a tabindex="-1" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'delivery_order','action'=>'index'));?>">To Customer</a></li>
+				                      <?php endif;?>
+				                      <?php if($CompanyRole==DEALER||$CompanyRole==DISTRIBUTOR):?>
+				                      <li><a tabindex="-1" href="<?php echo $this->Html->url(array('plugin'=>'','controller'=>'delivery_order','action'=>'index','self'));?>">From Supplier</a></li>
+				                      <?php endif;?>
+				                    </ul>
+				                </li>
 		          			</ul>
 		          		</li>
 		          		<li class="dropdown <?php if($this->params['plugin']=='full_calendar') echo 'active'; ?>">

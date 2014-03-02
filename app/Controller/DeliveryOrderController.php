@@ -1,6 +1,6 @@
 <?php
-class PurchaseOrderController extends AppController {
-	public $uses = array('PurchaseOrder','Good','PurchaseOrder');
+class DeliveryOrderController extends AppController {
+	public $uses = array('DeliveryOrder','Good','DeliveryOrder');
 	
 	public $components = array('RequestHandler');
 	
@@ -36,25 +36,25 @@ class PurchaseOrderController extends AppController {
 		//$this->Contact->recursive = 0;
 		
 		$this->paginate = array(
-				'conditions' => $this->PurchaseOrder->parseCriteria($this->passedArgs),
+				'conditions' => $this->DeliveryOrder->parseCriteria($this->passedArgs),
 				'limit' => 6,
 				'order' => array(
-						'PurchaseOrder.id' => 'desc'
+						'DeliveryOrder.id' => 'desc'
 				)
 		);
 // 		var_dump($this->passedArgs);
 // 		var_dump($this->Paginate());exit;
-		$this->set('quotations', $this->Paginate());
+		$this->set('delivery_orders', $this->Paginate());
 	}
 	
 	public function view($id = null){
-		$this->PurchaseOrder->id = $id;
-		if(!$this->PurchaseOrder->exists()){
+		$this->DeliveryOrder->id = $id;
+		if(!$this->DeliveryOrder->exists()){
 			throw new NotFoundException(__('Record not found'));
 		}
 		
 		
-		$this->set('purchase',$this->PurchaseOrder->read());
+		$this->set('delivery_order',$this->DeliveryOrder->read());
 		$this->set('goods',$this->Good->find('list'));
 		
 	}
@@ -65,22 +65,22 @@ class PurchaseOrderController extends AppController {
 		$goods = $this->Good->find('list');
 		$this->set(compact('goods'));
 		if(!empty($this->request->data)){
-			$this->request->data['PurchaseOrder']['company_id'] = $this->Auth->user('company_id');
+			$this->request->data['DeliveryOrder']['company_id'] = $this->Auth->user('company_id');
 			$amount = 0;
 			$records = array();
-			foreach ($this->request->data['PurchaseOrder']['items'] as $item){
+			foreach ($this->request->data['DeliveryOrder']['items'] as $item){
 				$amount += $item['total'];
 				$records[] = $item;
 			}
-			$this->request->data['PurchaseOrder']['items'] = $records;
-			$this->request->data['PurchaseOrder']['amount'] = $amount;
+			$this->request->data['DeliveryOrder']['items'] = $records;
+			$this->request->data['DeliveryOrder']['amount'] = $amount;
 // 			var_dump($this->request->data);exit;
 			
 			
-			$this->PurchaseOrder->create();
-			if($this->PurchaseOrder->save($this->request->data)){
+			$this->DeliveryOrder->create();
+			if($this->DeliveryOrder->save($this->request->data)){
 				$this->Session->setFlash(__('New purchase order added'),'alert'); //print_r($this->request->data); exit;
-				$this->redirect(array('action'=>'view',$this->PurchaseOrder->id));
+				$this->redirect(array('action'=>'view',$this->DeliveryOrder->id));
 			}
 			else
 			{
@@ -91,22 +91,22 @@ class PurchaseOrderController extends AppController {
 	
 	public function edit($id = null){
 		$this->view = 'add';
-		$this->PurchaseOrder->id = $id;
-		if(!$this->PurchaseOrder->exists()){
+		$this->DeliveryOrder->id = $id;
+		if(!$this->DeliveryOrder->exists()){
 			throw new NotFoundException(__('Record not found'));
 		}
 		$extra_msg = '';
 		if(!empty($this->request->data)){
 			$amount = 0;
 			$records = array();
-			foreach ($this->request->data['PurchaseOrder']['items'] as $item){
+			foreach ($this->request->data['DeliveryOrder']['items'] as $item){
 				$amount += $item['total'];
 				$records[] = $item;
 			}
-			$this->request->data['PurchaseOrder']['items'] = $records;
-			$this->request->data['PurchaseOrder']['amount'] = $amount;
+			$this->request->data['DeliveryOrder']['items'] = $records;
+			$this->request->data['DeliveryOrder']['amount'] = $amount;
 			
-			if($this->PurchaseOrder->save($this->request->data)){
+			if($this->DeliveryOrder->save($this->request->data)){
 				$this->Session->setFlash(__('Purchase order data saved'),'alert');
 				$this->redirect(array('action'=>'view',$id));
 			}
@@ -121,7 +121,7 @@ class PurchaseOrderController extends AppController {
 			$this->set(compact('suppliers'));
 			$goods = $this->Good->find('list');
 			$this->set(compact('goods'));
-			$this->data = $this->PurchaseOrder->read();
+			$this->data = $this->DeliveryOrder->read();
 		}
 	}
 	
@@ -151,13 +151,13 @@ class PurchaseOrderController extends AppController {
 			$this->redirect($this->referer());
 		}
 		
-		$quotation = $this->PurchaseOrder->find('first',array('conditions'=>array('PurchaseOrder.id'=>$id,'PurchaseOrder.company_id'=>$this->Auth->user('company_id'))));
+		$quotation = $this->DeliveryOrder->find('first',array('conditions'=>array('DeliveryOrder.id'=>$id,'DeliveryOrder.company_id'=>$this->Auth->user('company_id'))));
 		
 		if($quotation){
-			$this->PurchaseOrder->id = $id;
-			$record = $this->PurchaseOrder->saveField('status',PENDING);
+			$this->DeliveryOrder->id = $id;
+			$record = $this->DeliveryOrder->saveField('status',PENDING);
 			if($record){
-				$this->Session->setFlash(__('PurchaseOrder approved'),'alert');
+				$this->Session->setFlash(__('DeliveryOrder approved'),'alert');
 			}else{
 				$this->Session->setFlash(__('Unable to approved'),'alert', array('class'=>'alert-error'));
 			}
@@ -175,28 +175,28 @@ class PurchaseOrderController extends AppController {
 		}
 		$this->loadModel('DeliveryOrder');
 		
-		$purchase_order = $this->PurchaseOrder->find('first',array('conditions'=>array('PurchaseOrder.id'=>$id,'PurchaseOrder.supplier_id'=>$this->Auth->user('company_id'))));
+		$purchase_order = $this->DeliveryOrder->find('first',array('conditions'=>array('DeliveryOrder.id'=>$id,'DeliveryOrder.supplier_id'=>$this->Auth->user('company_id'))));
 		
 		if($purchase_order){
 			$order = 0;
 			do {
 				$order+=1;
-				$order_number = 'DO'.date('y').date('m').sprintf('%04d',$order);
+				$order_number = 'Q'.date('y').date('m').sprintf('%04d',$order);
 				$exist = $this->DeliveryOrder->find('first',array('recursive'=>-1,'conditions'=>array('DeliveryOrder.number'=>$order_number)));
 			} while ($exist);
 				
 			$this->request->data['DeliveryOrder']['number'] = $order_number;
 			$this->request->data['DeliveryOrder']['purchase_order_id'] = $id;
-			$this->request->data['DeliveryOrder']['customer_id'] = $purchase_order['PurchaseOrder']['company_id'];
-			$this->request->data['DeliveryOrder']['company_id'] = $purchase_order['PurchaseOrder']['supplier_id'];
-			$this->request->data['DeliveryOrder']['items'] = $purchase_order['PurchaseOrder']['items'];
-			$this->request->data['DeliveryOrder']['order_date'] = $purchase_order['PurchaseOrder']['order_date'];
-			$this->request->data['DeliveryOrder']['amount'] = $purchase_order['PurchaseOrder']['amount'];
+			$this->request->data['DeliveryOrder']['customer_id'] = $purchase_order['DeliveryOrder']['company_id'];
+			$this->request->data['DeliveryOrder']['company_id'] = $purchase_order['DeliveryOrder']['supplier_id'];
+			$this->request->data['DeliveryOrder']['items'] = $purchase_order['DeliveryOrder']['items'];
+			$this->request->data['DeliveryOrder']['order_date'] = $purchase_order['DeliveryOrder']['order_date'];
+			$this->request->data['DeliveryOrder']['amount'] = $purchase_order['DeliveryOrder']['amount'];
 			$this->DeliveryOrder->create();
 			if($this->DeliveryOrder->save($this->request->data)){
-				$this->PurchaseOrder->id = $id;
-				$this->PurchaseOrder->saveField('status',COMPLETED);
-				$this->Session->setFlash(__('Purchase order completed, DO has been issued'),'alert');
+				$this->DeliveryOrder->id = $id;
+				$this->DeliveryOrder->saveField('status',COMPLETED);
+				$this->Session->setFlash(__('Delivery order completed, DO has been issued'),'alert');
 			}
 		}else{
 			$this->Session->setFlash(__('Unable to retrieve'),'alert', array('class'=>'alert-error'));
