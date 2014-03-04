@@ -39,7 +39,7 @@
 			if(is_null($stock['Stock']['foreign_id'])){
 				echo "Manual Movement";	
 			}elseif($stock['Stock']['model']=="DeliveryOrder"){
-				echo "<a href='/delivery_order/view/{$stock['Stock']['foreign_id']}' target='_blank'>Delivery Order</a>";
+				echo $this->Html->link(__('Delivery Order'),array('controller'=>'delivery_order','action'=>'view',$stock['Stock']['foreign_id']),array('target'=>'_blank'));
 			}
 			?></td>
 			<td><?php echo $stock['Stock']['remark']; ?></td>
