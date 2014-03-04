@@ -31,4 +31,19 @@ class Stock extends AppModel {
 		$this->data[$this->alias]['company_id'] = CakeSession::read("Auth.User.company_id");
 		return true;
 	}
+	
+	function stockLevel($id){
+		$this->virtualFields = array('total' => 'SUM(Stock.quantity)');
+		$conditions = array(
+			$this->alias . '.good_id' => $id,
+			$this->alias . '.company_id'=>AuthComponent::user('company_id')
+		);
+		
+		$record = $this->find('first',array('conditions'=>$conditions,'group'=>array($this->alias.".good_id")));
+		if($record){
+			return $record[$this->alias]['quantity'];
+		}else{
+			return 0;
+		}
+	}
 }

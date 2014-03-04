@@ -78,26 +78,15 @@
 						</table>
 			  		</div>
 			  	</div>
-			  	<?php if($delivery_order['DeliveryOrder']['status']==PENDING && $delivery_order['DeliveryOrder']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
-			  		<div class="view-contact-box">
-			  		<h3><?php echo __('Confirm with detail'); ?></h3>
-			  		<?php echo $this->Form->create('PurchaseOrder',array('url'=>array('controller'=>'quotation','action'=>'confirm',$delivery_order['DeliveryOrder']['id']),'id'=>'PurchaseOrderForm','class'=>'form-horizontal')); ?>
-					<fieldset>
-					<?php echo $this->Form->input('number',array('type'=>'text','label'=>'PO Number','class'=>'input-xlarge','placeholder'=>'leave blank will be auto-generated')); ?>
-					<?php echo $this->Form->input('remark',array('type'=>'textarea','class'=>'input-xlarge')); ?>
-					</fieldset>
-					<?php echo $this->Form->end(); ?>
-					</div>
-			  	<?php endif;?>
 			  	<div class="view-contact-back">
-			  		<?php if(($delivery_order['DeliveryOrder']['status']==PENDING||$delivery_order['DeliveryOrder']['status']==PENDINGADMIN)):?>
+			  		<?php if(($delivery_order['DeliveryOrder']['status']==PENDING)):?>
 			  			<?php if($delivery_order['DeliveryOrder']['company_id']==$this->Session->read('Auth.User.company_id')):?>
-			  				<?php if(($this->Session->read('Auth.User.group_id')==ADMINISTRATOR||$this->Session->read('Auth.User.group_id')==SUPERADMIN)&&$delivery_order['DeliveryOrder']['status']==PENDINGADMIN):?>
-			  					<?php echo $this->Html->link(__('Approve'),array('controller'=>'quotation','action'=>'approve',$delivery_order['DeliveryOrder']['id']),array('class'=>'confirm btn btn-success'));?>
-			  				<?php endif;?>
-							<?php echo $this->Html->link(__('Edit'),array('controller'=>'quotation','action'=>'edit',$delivery_order['DeliveryOrder']['id']),array('class'=>'btn btn-primary'));?>
-						<?php elseif($delivery_order['DeliveryOrder']['customer_id']==$this->Session->read('Auth.User.company_id')):?>
-							<?php echo $this->Html->link(__('Confirm'),'javascript:;',array('onclick'=>"$('#PurchaseOrderForm').submit()",'class'=>'btn btn-success'));?>
+							<?php echo $this->Html->link(__('Stock Out'),array('controller'=>'delivery_order','action'=>'confirm',$delivery_order['DeliveryOrder']['id']),array('class'=>'btn btn-primary'));?>
+						<?php endif;?>	
+					<?php endif;?>
+			  		<?php if(($delivery_order['DeliveryOrder']['status']==DELIVERING)):?>
+			  			<?php if($delivery_order['DeliveryOrder']['customer_id']==$this->Session->read('Auth.User.company_id') && $delivery_order['DeliveryOrder']['status']==DELIVERING):?>
+							<?php echo $this->Html->link(__('Stock In'),array('controller'=>'delivery_order','action'=>'receive',$delivery_order['DeliveryOrder']['id']),array('class'=>'btn btn-primary'));?>
 						<?php endif;?>
 					<?php endif;?>
 					<?php if($delivery_order['DeliveryOrder']['company_id']==$this->Session->read('Auth.User.company_id')):?>

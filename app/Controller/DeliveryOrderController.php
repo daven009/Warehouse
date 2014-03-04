@@ -175,28 +175,49 @@ class DeliveryOrderController extends AppController {
 		}
 		$this->loadModel('DeliveryOrder');
 		
-		$purchase_order = $this->DeliveryOrder->find('first',array('conditions'=>array('DeliveryOrder.id'=>$id,'DeliveryOrder.supplier_id'=>$this->Auth->user('company_id'))));
+		$delivery_order = $this->DeliveryOrder->find('first',array('conditions'=>array('DeliveryOrder.id'=>$id,'DeliveryOrder.company_id'=>$this->Auth->user('company_id'))));
 		
-		if($purchase_order){
-			$order = 0;
-			do {
-				$order+=1;
-				$order_number = 'Q'.date('y').date('m').sprintf('%04d',$order);
-				$exist = $this->DeliveryOrder->find('first',array('recursive'=>-1,'conditions'=>array('DeliveryOrder.number'=>$order_number)));
-			} while ($exist);
-				
-			$this->request->data['DeliveryOrder']['number'] = $order_number;
-			$this->request->data['DeliveryOrder']['purchase_order_id'] = $id;
-			$this->request->data['DeliveryOrder']['customer_id'] = $purchase_order['DeliveryOrder']['company_id'];
-			$this->request->data['DeliveryOrder']['company_id'] = $purchase_order['DeliveryOrder']['supplier_id'];
-			$this->request->data['DeliveryOrder']['items'] = $purchase_order['DeliveryOrder']['items'];
-			$this->request->data['DeliveryOrder']['order_date'] = $purchase_order['DeliveryOrder']['order_date'];
-			$this->request->data['DeliveryOrder']['amount'] = $purchase_order['DeliveryOrder']['amount'];
-			$this->DeliveryOrder->create();
-			if($this->DeliveryOrder->save($this->request->data)){
-				$this->DeliveryOrder->id = $id;
-				$this->DeliveryOrder->saveField('status',COMPLETED);
-				$this->Session->setFlash(__('Delivery order completed, DO has been issued'),'alert');
+		if($delivery_order){
+			$this->loadModel('Stock');
+			foreach ($delivery_order['DeliveryOrder']['items'] as $item){
+				$stock_level = $this->Stock->stockLevel($item['id']);
+				if($item['quantity']>$stock_level){
+					$this->Session->setFlash(__('Insufficient stock level'),'alert', array('class'=>'alert-error'));
+					$this->redirect($this->referer());
+				}else{
+					$data[] = array('good_id' => $item['id'],'company_id'=>$this->Auth->user('company_id'),'quantity'=>-$item['quantity'],'model'=>'DeliveryOrder','foreign_id'=>$id);
+				}
+			}
+			$this->Stock->savemany($data);
+			$this->DeliveryOrder->id = $id;
+			if($this->DeliveryOrder->saveField('status',DELIVERING)){
+				$this->Session->setFlash(__('Delivery order items been stocked out'),'alert');
+			}
+		}else{
+			$this->Session->setFlash(__('Unable to retrieve'),'alert', array('class'=>'alert-error'));
+		}
+		
+		$this->redirect($this->referer());
+	}
+	
+	public function receive($id){
+		if(is_null($id)){
+			$this->Session->setFlash(__('Unable to retrieve'),'alert', array('class'=>'alert-error'));
+			$this->redirect($this->referer());
+		}
+		$this->loadModel('DeliveryOrder');
+		
+		$delivery_order = $this->DeliveryOrder->find('first',array('conditions'=>array('DeliveryOrder.id'=>$id,'DeliveryOrder.customer_id'=>$this->Auth->user('company_id'))));
+	
+		if($delivery_order){
+			$this->loadModel('Stock');
+			foreach ($delivery_order['DeliveryOrder']['items'] as $item){
+				$data[] = array('good_id' => $item['id'],'company_id'=>$this->Auth->user('company_id'),'quantity'=>$item['quantity'],'model'=>'DeliveryOrder','foreign_id'=>$id);
+			}
+			$this->Stock->savemany($data);
+			$this->DeliveryOrder->id = $id;
+			if($this->DeliveryOrder->saveField('status',DELIVERED)){
+				$this->Session->setFlash(__('Delivery order items been stocked in'),'alert');
 			}
 		}else{
 			$this->Session->setFlash(__('Unable to retrieve'),'alert', array('class'=>'alert-error'));

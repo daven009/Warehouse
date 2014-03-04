@@ -227,8 +227,12 @@ if (!defined('COMPLETED')) {
 	define('COMPLETED', 4);
 }
 
+if (!defined('DELIVERING')) {
+	define('DELIVERING', 5);
+}
+
 if (!defined('DELIVERED')) {
-	define('DELIVERED', 5);
+	define('DELIVERED', 6);
 }
 
 //DB Date format

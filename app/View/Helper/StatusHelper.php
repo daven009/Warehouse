@@ -15,6 +15,8 @@ class StatusHelper extends AppHelper{
 				return "<strong class='green'>Completed";
 			case DELIVERED:
 				return "<strong class='blue'>Delivered";
+			case DELIVERING:
+				return "<strong class='yellow'>Delivering";
 			case PENDINGADMIN:
 				return "<strong class='purple'>Pending Approval";
 			default:
