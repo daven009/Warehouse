@@ -90,9 +90,9 @@
 						<?php endif;?>
 					<?php endif;?>
 					<?php if($delivery_order['DeliveryOrder']['company_id']==$this->Session->read('Auth.User.company_id')):?>
-						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index'),array('class'=>'btn btn-inverse'));?>
+						<?php echo $this->Html->link(__('Back'),array('controller'=>'delivery_order','action'=>'index'),array('class'=>'btn btn-inverse'));?>
 					<?php else:?>
-						<?php echo $this->Html->link(__('Back'),array('controller'=>'quotation','action'=>'index','self'),array('class'=>'btn btn-inverse'));?>
+						<?php echo $this->Html->link(__('Back'),array('controller'=>'delivery_order','action'=>'index','self'),array('class'=>'btn btn-inverse'));?>
 					<?php endif;?>
 				</div>
 			</div>
